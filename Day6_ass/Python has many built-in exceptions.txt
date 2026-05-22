@@ -1,0 +1,94 @@
+"""Python has many built-in exceptions. These are predefined error classes that Python automatically raises when an error occurs.
+
+Common Built-in Exceptions in Python
+Exception	Meaning	Example
+ZeroDivisionError	Division by zero	10/0
+ValueError	Wrong value type	int("abc")
+TypeError	Wrong data type operation	"5" + 5
+NameError	Variable not defined	print(x)
+IndexError	Invalid list index	a[10]
+KeyError	Dictionary key not found	d["age"]
+AttributeError	Invalid object attribute	"abc".append()
+FileNotFoundError	File does not exist	opening missing file
+ImportError	Module import failed	import abcxyz
+ModuleNotFoundError	Module not installed	import numpyyy
+IndentationError	Wrong indentation	spacing mistake
+SyntaxError	Invalid syntax	missing :
+EOFError	Input ended unexpectedly	input stream issue
+RuntimeError	General runtime issue	program execution error
+MemoryError	Memory full	huge allocation
+OverflowError	Number too large	huge math result
+AssertionError	Assertion failed	assert False
+StopIteration	Iterator finished	loops/iterators
+KeyboardInterrupt	User pressed Ctrl+C	manual interruption
+1. ZeroDivisionError
+try:
+    print(10/0)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+Output
+Cannot divide by zero
+2. ValueError
+try:
+    n = int("hello")
+
+except ValueError:
+    print("Invalid conversion")
+Output
+Invalid conversion
+3. TypeError
+try:
+    print("5" + 5)
+
+except TypeError:
+    print("Different data types")
+Output
+Different data types
+4. IndexError
+try:
+    a = [1,2,3]
+
+    print(a[10])
+
+except IndexError:
+    print("Index out of range")
+Output
+Index out of range
+5. KeyError
+try:
+    d = {"name":"Harinita"}
+
+    print(d["age"])
+
+except KeyError:
+    print("Key not found")
+Output
+Key not found
+Parent Exception Class
+
+All exceptions come under:
+
+Exception
+
+You can catch all exceptions using:
+
+try:
+    a = 10/0
+
+except Exception as e:
+    print(e)
+Output
+division by zero
+Exception Hierarchy
+BaseException
+    ├── Exception
+          ├── ArithmeticError
+          │      └── ZeroDivisionError
+          ├── ValueError
+          ├── TypeError
+          ├── IndexError
+          ├── KeyError
+          ├── NameError
+          └── FileNotFoundError
+"""
