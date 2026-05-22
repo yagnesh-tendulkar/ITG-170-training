@@ -1,0 +1,6 @@
+this is the demo file for practice.
+ou probably mean string interpolation (not “interposition”).
+
+String Interpolation
+
+String interpolation is the process of inserting variables or values into a string.

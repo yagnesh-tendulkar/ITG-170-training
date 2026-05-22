@@ -1,0 +1,7 @@
+file=open('example.txt','w+')
+file.write("this is file handling in python.")
+file.close()
+file=open("example.txt",'r')
+content=file.read()
+print(content)
+file.close()
