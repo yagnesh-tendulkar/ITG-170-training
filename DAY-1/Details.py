@@ -1,0 +1,7 @@
+print("\n--- My Details ---")
+print("Name: Vaishnavi Vuppala")
+print("City: Visakhapatnam")
+print("Today's Date: 08/05/2026")
+print("Favorite Food: Potato fry")
+print("Favorite Color: Black")
+print("Favorite Hobby: Doing Paper Crafts")
