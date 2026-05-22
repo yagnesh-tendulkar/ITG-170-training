@@ -1,0 +1,14 @@
+class Person:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+    def getFirstName(self):
+        return self.first_name
+    def getLastName(self):
+        return self.last_name
+
+p = Person("John", "Smith")
+
+# Displaying output
+print("First Name:", p.getFirstName())
+print("Last Name:", p.getLastName())
