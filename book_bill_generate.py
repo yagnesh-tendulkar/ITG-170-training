@@ -1,0 +1,10 @@
+bookName=input("enter book name? ")
+bookPrice=float(input("enter book price ? "))
+bookQuantity=int(input("enter quntity ? "))
+
+print("INVOICE")
+print("=================")
+print("Book Name : "+bookName)
+print("Book price : "+str(bookPrice))
+print("Book quqntity : "+str(bookQuantity))
+print("Total price : "+str(bookPrice*bookQuantity))
