@@ -1,0 +1,173 @@
+/* app/static/css/style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+    font-size: 1.5rem;
+}
+
+nav a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #2980b9;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Login Page */
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Dashboard Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+.status-active { color: #27ae60; font-weight: bold; }
+.status-inactive { color: #e74c3c; font-weight: bold; }
+.status-pending { color: #f39c12; font-weight: bold; }
+.status-blocked { color: #8e44ad; font-weight: bold; }
+
+/* Action Buttons */
+td a {
+    color: #2980b9;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+td form {
+    display: inline;
+}
+
+td button {
+    background-color: #e74c3c;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    width: auto;
+}
+
+td button:hover {
+    background-color: #c0392b;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    nav {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Employee Dashboard</h2>
+<a href="/add-employee">+ Add New Employee</a>
+<table border="1">
+    <tr>
+        <th>Emp ID</th>
+        <th>Full Name</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.emp_id }}</td>
+        <td>{{ emp.full_name }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ status_display[emp.status.value] }}</td>
+        <td>
+            <a href="/edit-employee/{{ emp.emp_id }}">Edit</a>
+            <form action="/delete-employee/{{ emp.emp_id }}" method="post" style="display:inline;">
+                <button type="submit" onclick="return confirm('Delete?')">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
