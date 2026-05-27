@@ -1,26 +1,29 @@
-# Type hints example
-def max_number(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
+def rectangle_area(length: float | int, width: float | int) -> float:
+    """
+    Calculate the area of a rectangle.
 
-# Complete docstring with examples
-"""
-Calculate the area of a rectangle.
+    Args:
+        length (float | int): Length of the rectangle (must be non-negative)
+        width (float | int): Width of the rectangle (must be non-negative)
 
-Args:
-    length (Union[int, float]): Length of the rectangle
-    width (Union[int, float]): Width of the rectangle
+    Returns:
+        float: Area of the rectangle
 
-Returns:
-    Union[int, float]: Area of the rectangle
+    Raises:
+        TypeError: If inputs are not numeric (int or float)
+        ValueError: If any dimension is negative
 
-Raises:
-    TypeError: If inputs are not numeric
-    ValueError: If dimensions are negative
+    Example:
+        >>> rectangle_area(4, 5)
+        20
+    """
 
-Example:
-    >>> rectangle_area(4, 5)
-    20
-"""
+    # Type validation
+    if not isinstance(length, (int, float)) or not isinstance(width, (int, float)):
+        raise TypeError("Length and width must be numbers (int or float)")
 
-# Error handling
-if not isinstance(length, (int, float)):
-    raise TypeError("❌ Length and width must be numbers")
+    # Value validation
+    if length < 0 or width < 0:
+        raise ValueError("Length and width must be non-negative")
+
+    return float(length * width)
