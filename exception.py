@@ -1,67 +1,25 @@
-# 1. Try-Except Block
+# Custom Exception Classes
+class InsufficientFundsException(Exception):
+    """Custom exception for insufficient funds."""
+    def __init__(self, balance: float, amount: float):
+        self.balance = balance
+        self.amount = amount
+        super().__init__(...)
 
+# Complete Exception Handling
 try:
-    a = 10 / 0
-    print(a)
-
+    risky_operation()
 except ZeroDivisionError:
-    print("Exception Handled")
-
-
-# 2. Multiple Except Block
-
-try:
-    num = int("hello")
-    a = 10 / 0
-
+    print("✓ Exception Handled")
 except ValueError:
-    print("Value Error Occurred")
-
-except ZeroDivisionError:
-    print("Zero Division Error Occurred")
-# 3. Nested Try Block
-
-try:
-
-    try:
-        a = 10 / 0
-
-    except ZeroDivisionError:
-        print("Inner Try Exception Handled")
-
-except:
-    print("Outer Exception")
-    # 4. Finally Block
-
-try:
-    a = 10 / 0
-
-except ZeroDivisionError:
-    print("Exception Caught")
-
+    print("✓ ValueError Handled")
+else:
+    print("✓ No exception occurred")
 finally:
-    print("Finally Block Executed")
-# 5. Raise Keyword (similar to Java throw)
+    print("✓ Always executes")
 
-age = 15
-
+# Exception Chaining
 try:
-    if age < 18:
-        raise Exception("Not Eligible")
-
-    else:
-        print("Eligible")
-
-except Exception as e:
-    print(e)
-# 6. Function Exception Handling (similar to throws)
-
-def check():
-    a = 10 / 0
-
-
-try:
-    check()
-
-except ZeroDivisionError:
-    print("Exception Handled")
+    value = int(data)
+except ValueError as e:
+    raise RuntimeError(f"Failed: {e}") from e
