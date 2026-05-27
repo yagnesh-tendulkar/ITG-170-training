@@ -1,49 +1,54 @@
 from sqlalchemy.orm import Session
-from models import Employee, StatusEnum
-from utils import generate_email, generate_password
+from . import models, schemas
+from fastapi import HTTPException, status
 
-def get_employees(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(Employee).offset(skip).limit(limit).all()
 
-def get_employee(db: Session, emp_id: int):
-    return db.query(Employee).filter(Employee.emp_id == emp_id).first()
+def create_user(db: Session, user: schemas.UserCreate):
+    existing = db.query(models.User).filter(models.User.email == user.email).first()
+    if existing:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email already registered"
+        )
 
-def create_employee(db: Session, first_name: str, last_name: str, department: str):
-    email = generate_email(first_name, last_name)
-    emp = Employee(
-        first_name=first_name,
-        last_name=last_name,
-        department=department,
-        email=email,
-        status=StatusEnum.p
-    )
-    db.add(emp)
+    db_user = models.User(**user.model_dump())
+    db.add(db_user)
     db.commit()
-    db.refresh(emp)
-    return emp
+    db.refresh(db_user)
+    return db_user
 
-def update_employee(db: Session, emp_id: int, first_name=None, last_name=None,
-                   department=None, status=None):
-    emp = get_employee(db, emp_id)
-    if not emp:
-        return None
-    if first_name:
-        emp.first_name = first_name
-    if last_name:
-        emp.last_name = last_name
-    if department:
-        emp.department = department
-    if status:
-        emp.status = StatusEnum(status)
+
+def get_user(db: Session, user_id: int):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return user
+
+
+def get_users(db: Session, skip: int = 0, limit: int = 10):
+    return db.query(models.User).offset(skip).limit(limit).all()
+
+
+def update_user(db: Session, user_id: int, user_update: schemas.UserUpdate):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    update_data = user_update.model_dump(exclude_unset=True)
+
+    for key, value in update_data.items():
+        setattr(user, key, value)
+
     db.commit()
-    db.refresh(emp)
-    return emp
+    db.refresh(user)
+    return user
 
-def delete_employee(db: Session, emp_id: int):
-    emp = get_employee(db, emp_id)
-    if emp:
-        db.delete(emp)
-        db.commit()
-        return True
-    return False
 
+def delete_user(db: Session, user_id: int):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    db.delete(user)
+    db.commit()
+    return {"message": "User deleted successfully"}
