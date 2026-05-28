@@ -8,7 +8,7 @@ import os
 app = FastAPI(title="Gemini Streaming API")
 
 # ---------------- GEMINI CONFIG ----------------
-GOOGLE_API_KEY = "AIzaSyDDr3dUFHEQCIMBeunSdmmcl3Nn0tIQiLQ"
+GOOGLE_API_KEY = ""
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
