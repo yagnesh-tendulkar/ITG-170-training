@@ -12,3 +12,11 @@ class User(BaseModel):
 valid_user={"id":"1","name":"balaji"}
 user=User(**valid_user)
 print(user.name)
+
+#invalid user
+invalid_user={"id":"invalid","name":"BALAA"}
+
+try:
+  invalid=User(**invalid_user)
+except ValidationError as e:
+  print(e.errors())
