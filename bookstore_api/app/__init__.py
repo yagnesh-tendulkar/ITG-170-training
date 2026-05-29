@@ -1,3 +1,0 @@
-"""
-Bookstore API Application Package
-"""
