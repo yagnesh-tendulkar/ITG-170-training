@@ -8,7 +8,7 @@ app = FastAPI()
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="yourpassword",
+    password="M1racle@123",
     database="employee_management"
 )
 cursor = conn.cursor(dictionary=True)
