@@ -1,9 +1,9 @@
 #usage of pydantic basemodel class
 from pydantic import BaseModel,ValidationError
+"""Creating a data model class with name User ,where this class represents the request data model/blueprint"""
 
 
 class User(BaseModel):
-"""Creating a data model class with name User ,where this class represents the request data model/blueprint"""
   id :int
   name:str
   is_active:bool=True
