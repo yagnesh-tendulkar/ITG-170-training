@@ -1,0 +1,466 @@
+2026-05-30 17:49:35,438 - INFO - [Request-ID: 840d0cc2-80f3-4ec1-a8f5-e93c6505d0c6] - Incoming: GET /docs
+2026-05-30 17:49:35,440 - INFO - [Request-ID: 840d0cc2-80f3-4ec1-a8f5-e93c6505d0c6] - Outgoing: GET /docs | Status: 200 | Duration: 1.52ms
+2026-05-30 17:49:35,598 - INFO - [Request-ID: 3ed68e70-8e08-46b0-98dd-2da2e7be3804] - Incoming: GET /openapi.json
+2026-05-30 17:49:35,605 - INFO - [Request-ID: 3ed68e70-8e08-46b0-98dd-2da2e7be3804] - Outgoing: GET /openapi.json | Status: 200 | Duration: 7.07ms
+2026-05-30 17:50:01,566 - INFO - [Request-ID: d61c7de3-887b-4caa-a3fe-09b88e949d29] - Incoming: GET /health
+2026-05-30 17:50:01,568 - INFO - [Request-ID: d61c7de3-887b-4caa-a3fe-09b88e949d29] - Outgoing: GET /health | Status: 200 | Duration: 2.55ms
+2026-05-30 17:50:01,612 - INFO - [Request-ID: 2cba6aeb-c627-47d4-90ae-8db2867148ef] - Incoming: GET /favicon.ico
+2026-05-30 17:50:01,613 - INFO - [Request-ID: 2cba6aeb-c627-47d4-90ae-8db2867148ef] - Outgoing: GET /favicon.ico | Status: 404 | Duration: 0.65ms
+2026-05-30 17:50:13,670 - INFO - [Request-ID: 27d63fcd-c88b-471a-ade1-4283fddf8183] - Incoming: GET /tasks
+2026-05-30 17:50:13,671 - INFO - [Request-ID: 27d63fcd-c88b-471a-ade1-4283fddf8183] - Outgoing: GET /tasks | Status: 307 | Duration: 0.98ms
+2026-05-30 17:50:13,675 - INFO - [Request-ID: e9602346-6800-4c5b-8f66-82890e5b531c] - Incoming: GET /tasks/
+2026-05-30 17:50:13,689 - INFO - [Request-ID: e9602346-6800-4c5b-8f66-82890e5b531c] - Outgoing: GET /tasks/ | Status: 200 | Duration: 14.5ms
+2026-05-30 17:50:13,729 - INFO - [Request-ID: c64125ee-5094-4076-b013-104cc831516b] - Incoming: GET /favicon.ico
+2026-05-30 17:50:13,730 - INFO - [Request-ID: c64125ee-5094-4076-b013-104cc831516b] - Outgoing: GET /favicon.ico | Status: 404 | Duration: 1.45ms
+2026-05-30 17:50:23,088 - INFO - [Request-ID: 73d634cc-9067-4c02-9902-b3855263175c] - Incoming: GET /tasks/2
+2026-05-30 17:50:23,095 - INFO - [Request-ID: 73d634cc-9067-4c02-9902-b3855263175c] - Outgoing: GET /tasks/2 | Status: 200 | Duration: 7.27ms
+2026-05-30 17:50:23,139 - INFO - [Request-ID: 9ee7b1ca-f7fd-4b76-8e9d-8d2dd2e1599e] - Incoming: GET /favicon.ico
+2026-05-30 17:50:23,140 - INFO - [Request-ID: 9ee7b1ca-f7fd-4b76-8e9d-8d2dd2e1599e] - Outgoing: GET /favicon.ico | Status: 404 | Duration: 0.97ms
+2026-05-30 17:50:28,840 - INFO - [Request-ID: 4574df22-0bca-42a7-b2a8-472cbfbf3fb7] - Incoming: GET /tasks
+2026-05-30 17:50:28,841 - INFO - [Request-ID: 4574df22-0bca-42a7-b2a8-472cbfbf3fb7] - Outgoing: GET /tasks | Status: 307 | Duration: 0.44ms
+2026-05-30 17:50:28,842 - INFO - [Request-ID: aec88b7d-e17f-46cd-840f-22b7fa788a2a] - Incoming: GET /tasks/
+2026-05-30 17:50:28,844 - INFO - [Request-ID: aec88b7d-e17f-46cd-840f-22b7fa788a2a] - Outgoing: GET /tasks/ | Status: 200 | Duration: 1.45ms
+2026-05-30 17:50:28,858 - INFO - [Request-ID: 3b8e5800-84d8-4ba7-ab22-9f50f641c1d9] - Incoming: GET /favicon.ico
+2026-05-30 17:50:28,859 - INFO - [Request-ID: 3b8e5800-84d8-4ba7-ab22-9f50f641c1d9] - Outgoing: GET /favicon.ico | Status: 404 | Duration: 0.58ms
+2026-05-30 17:50:37,405 - INFO - [Request-ID: bb78372f-f27e-467d-b93e-ac9a6f3ac114] - Incoming: GET /docs
+2026-05-30 17:50:37,405 - INFO - [Request-ID: bb78372f-f27e-467d-b93e-ac9a6f3ac114] - Outgoing: GET /docs | Status: 200 | Duration: 0.8ms
+2026-05-30 17:50:37,497 - INFO - [Request-ID: d5e7528a-c724-4ca3-aade-4c1618305d87] - Incoming: GET /openapi.json
+2026-05-30 17:50:37,498 - INFO - [Request-ID: d5e7528a-c724-4ca3-aade-4c1618305d87] - Outgoing: GET /openapi.json | Status: 200 | Duration: 0.68ms
+2026-05-30 17:51:25,009 - INFO - [Request-ID: 8461801f-fcbc-4d71-a70b-0524ff6ed34d] - Incoming: POST /tasks/
+2026-05-30 17:51:25,011 - ERROR - [Request-ID: 8461801f-fcbc-4d71-a70b-0524ff6ed34d] - Execution Fault: POST /tasks/ failed after 1.22ms. Detail: can't compare offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/.local/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/.local/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Desktop/TODO/app/schemas/schemas.py", line 33, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-30 17:53:23,831 - INFO - [Request-ID: 5f9ce95d-b43a-47a7-b5c2-0345d77e0e1a] - Incoming: POST /tasks/
+2026-05-30 17:53:23,964 - ERROR - [Request-ID: 5f9ce95d-b43a-47a7-b5c2-0345d77e0e1a] - Execution Fault: POST /tasks/ failed after 132.96ms. Detail: 1 validation errors:
+  {'type': 'datetime_type', 'loc': ('response', 'due_date'), 'msg': 'Input should be a valid datetime', 'input': None}
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'datetime_type', 'loc': ('response', 'due_date'), 'msg': 'Input should be a valid datetime', 'input': None}
+
+2026-05-30 17:53:59,353 - INFO - [Request-ID: 85af8107-df89-4b49-b91a-150a74c626f1] - Incoming: POST /tasks/
+2026-05-30 17:53:59,496 - INFO - [Request-ID: 85af8107-df89-4b49-b91a-150a74c626f1] - Outgoing: POST /tasks/ | Status: 201 | Duration: 142.51ms
+2026-05-30 17:54:19,893 - INFO - [Request-ID: 61d5ee6b-9535-4d68-b397-38fb52a4b249] - Incoming: POST /tasks/
+2026-05-30 17:54:19,895 - ERROR - [Request-ID: 61d5ee6b-9535-4d68-b397-38fb52a4b249] - Execution Fault: POST /tasks/ failed after 1.32ms. Detail: can't compare offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/.local/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/.local/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Desktop/TODO/app/schemas/schemas.py", line 33, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-30 17:55:18,525 - INFO - [Request-ID: b74247ba-f81e-4859-b24b-6c9d93a55259] - Incoming: GET /docs
+2026-05-30 17:55:18,527 - INFO - [Request-ID: b74247ba-f81e-4859-b24b-6c9d93a55259] - Outgoing: GET /docs | Status: 200 | Duration: 1.59ms
+2026-05-30 17:55:18,638 - INFO - [Request-ID: 1af0b2f0-3201-48a6-a459-532d47a64243] - Incoming: GET /openapi.json
+2026-05-30 17:55:18,645 - INFO - [Request-ID: 1af0b2f0-3201-48a6-a459-532d47a64243] - Outgoing: GET /openapi.json | Status: 200 | Duration: 7.02ms
+2026-05-30 17:55:29,976 - INFO - [Request-ID: d9a8c633-61c0-4cc0-a86b-5a8d60bdd1c8] - Incoming: POST /tasks/
+2026-05-30 17:55:29,977 - ERROR - [Request-ID: d9a8c633-61c0-4cc0-a86b-5a8d60bdd1c8] - Execution Fault: POST /tasks/ failed after 1.18ms. Detail: can't compare offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/.local/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/.local/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Desktop/TODO/app/schemas/schemas.py", line 33, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-30 17:56:53,397 - INFO - [Request-ID: 33a0dfa2-2461-47c0-a2be-52d99244a344] - Incoming: POST /tasks/
+2026-05-30 17:56:53,541 - INFO - [Request-ID: 33a0dfa2-2461-47c0-a2be-52d99244a344] - Outgoing: POST /tasks/ | Status: 201 | Duration: 144.7ms
+2026-05-30 17:56:58,911 - INFO - [Request-ID: 6aa20791-ba58-4c52-baac-4a6bdb722443] - Incoming: GET /docs
+2026-05-30 17:56:58,912 - INFO - [Request-ID: 6aa20791-ba58-4c52-baac-4a6bdb722443] - Outgoing: GET /docs | Status: 200 | Duration: 0.67ms
+2026-05-30 17:56:59,006 - INFO - [Request-ID: d396a29f-cd7e-46e7-9a11-0edf7c66173a] - Incoming: GET /openapi.json
+2026-05-30 17:56:59,013 - INFO - [Request-ID: d396a29f-cd7e-46e7-9a11-0edf7c66173a] - Outgoing: GET /openapi.json | Status: 200 | Duration: 7.01ms
+2026-05-30 17:58:01,387 - INFO - [Request-ID: b706845e-d33d-4fcd-9524-d64131776808] - Incoming: POST /tasks/
+2026-05-30 17:58:01,389 - ERROR - [Request-ID: b706845e-d33d-4fcd-9524-d64131776808] - Execution Fault: POST /tasks/ failed after 1.38ms. Detail: can't compare offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/.local/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/.local/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Desktop/TODO/app/schemas/schemas.py", line 33, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-30 18:00:00,064 - INFO - [Request-ID: 602ea491-e925-49a8-8866-df335a25f5d9] - Incoming: GET /docs
+2026-05-30 18:00:00,065 - INFO - [Request-ID: 602ea491-e925-49a8-8866-df335a25f5d9] - Outgoing: GET /docs | Status: 200 | Duration: 1.43ms
+2026-05-30 18:00:00,173 - INFO - [Request-ID: ad5f07d5-cf1a-4c27-955d-56ae079f0d93] - Incoming: GET /openapi.json
+2026-05-30 18:00:00,181 - INFO - [Request-ID: ad5f07d5-cf1a-4c27-955d-56ae079f0d93] - Outgoing: GET /openapi.json | Status: 200 | Duration: 7.5ms
+2026-05-30 18:00:31,756 - INFO - [Request-ID: 7c625f87-2f8d-48d9-8bb3-49d4a70d7ba2] - Incoming: GET /docs
+2026-05-30 18:00:31,758 - INFO - [Request-ID: 7c625f87-2f8d-48d9-8bb3-49d4a70d7ba2] - Outgoing: GET /docs | Status: 200 | Duration: 1.39ms
+2026-05-30 18:00:31,837 - INFO - [Request-ID: d2347d24-05e1-429b-a5e4-49402b11ca22] - Incoming: GET /openapi.json
+2026-05-30 18:00:31,844 - INFO - [Request-ID: d2347d24-05e1-429b-a5e4-49402b11ca22] - Outgoing: GET /openapi.json | Status: 200 | Duration: 6.54ms
+2026-05-30 18:00:42,957 - INFO - [Request-ID: 8a885e96-b202-4d90-bf5f-cd77e78447fd] - Incoming: POST /tasks/
+2026-05-30 18:00:42,958 - ERROR - [Request-ID: 8a885e96-b202-4d90-bf5f-cd77e78447fd] - Execution Fault: POST /tasks/ failed after 1.38ms. Detail: can't compare offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/.local/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/.local/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Desktop/TODO/app/schemas/schemas.py", line 33, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-30 18:01:45,298 - INFO - [Request-ID: bd10c28f-a423-41f3-891f-2bd97d49e4ae] - Incoming: POST /tasks/
+2026-05-30 18:01:45,395 - INFO - [Request-ID: bd10c28f-a423-41f3-891f-2bd97d49e4ae] - Outgoing: POST /tasks/ | Status: 201 | Duration: 97.38ms
+2026-05-30 18:01:45,407 - INFO - [Request-ID: ad53bd54-aac1-4987-a99d-c37bec372c34] - Incoming: GET /tasks/
+2026-05-30 18:01:45,410 - ERROR - [Request-ID: ad53bd54-aac1-4987-a99d-c37bec372c34] - Execution Fault: GET /tasks/ failed after 3.45ms. Detail: 2 validation errors:
+  {'type': 'value_error', 'loc': ('response', 0), 'msg': 'Value error, Due date cannot be set before the creation date.', 'input': <app.models.models.TaskModel object at 0x75115afb6260>, 'ctx': {'error': ValueError('Due date cannot be set before the creation date.')}}
+  {'type': 'value_error', 'loc': ('response', 1), 'msg': 'Value error, Due date cannot be set before the creation date.', 'input': <app.models.models.TaskModel object at 0x75115afb6440>, 'ctx': {'error': ValueError('Due date cannot be set before the creation date.')}}
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+  File "/home/miracle/Desktop/TODO/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'value_error', 'loc': ('response', 0), 'msg': 'Value error, Due date cannot be set before the creation date.', 'input': <app.models.models.TaskModel object at 0x75115afb6260>, 'ctx': {'error': ValueError('Due date cannot be set before the creation date.')}}
+  {'type': 'value_error', 'loc': ('response', 1), 'msg': 'Value error, Due date cannot be set before the creation date.', 'input': <app.models.models.TaskModel object at 0x75115afb6440>, 'ctx': {'error': ValueError('Due date cannot be set before the creation date.')}}
+
+2026-05-30 18:02:29,783 - INFO - [Request-ID: c08402ef-9d92-46ea-b6ff-d56997af6166] - Incoming: POST /tasks/
+2026-05-30 18:02:29,879 - INFO - [Request-ID: c08402ef-9d92-46ea-b6ff-d56997af6166] - Outgoing: POST /tasks/ | Status: 201 | Duration: 95.89ms
+2026-05-30 18:02:29,884 - INFO - [Request-ID: ad70d8c5-b28a-4948-82a1-aebfce9eae24] - Incoming: GET /tasks/
+2026-05-30 18:02:29,889 - INFO - [Request-ID: ad70d8c5-b28a-4948-82a1-aebfce9eae24] - Outgoing: GET /tasks/ | Status: 200 | Duration: 5.23ms
+2026-05-30 18:02:29,891 - INFO - [Request-ID: ad9b603a-30e9-43da-a5b0-5fabfd567265] - Incoming: POST /tasks/
+2026-05-30 18:02:29,893 - INFO - [Request-ID: ad9b603a-30e9-43da-a5b0-5fabfd567265] - Outgoing: POST /tasks/ | Status: 422 | Duration: 1.53ms
+2026-05-30 18:02:29,895 - INFO - [Request-ID: cccfebb7-5d32-41ff-a720-0cea65d6406e] - Incoming: POST /tasks/
+2026-05-30 18:02:30,050 - INFO - [Request-ID: cccfebb7-5d32-41ff-a720-0cea65d6406e] - Outgoing: POST /tasks/ | Status: 201 | Duration: 155.54ms
+2026-05-30 18:02:30,055 - INFO - [Request-ID: 15f8425e-8082-4010-81f4-cfa563bd8751] - Incoming: GET /tasks/
+2026-05-30 18:02:30,060 - INFO - [Request-ID: 15f8425e-8082-4010-81f4-cfa563bd8751] - Outgoing: GET /tasks/ | Status: 200 | Duration: 4.98ms
+2026-05-30 18:03:18,014 - INFO - [Request-ID: 5d536a9c-b699-47c9-8df2-95033af019c7] - Incoming: GET /docs
+2026-05-30 18:03:18,016 - INFO - [Request-ID: 5d536a9c-b699-47c9-8df2-95033af019c7] - Outgoing: GET /docs | Status: 200 | Duration: 1.86ms
+2026-05-30 18:03:18,118 - INFO - [Request-ID: f67118ba-ec88-408f-9735-c1753723de7d] - Incoming: GET /openapi.json
+2026-05-30 18:03:18,125 - INFO - [Request-ID: f67118ba-ec88-408f-9735-c1753723de7d] - Outgoing: GET /openapi.json | Status: 200 | Duration: 6.63ms
+2026-05-30 18:03:22,022 - INFO - [Request-ID: 5b0eb690-8e56-41a7-beb0-b65afcb5ddf8] - Incoming: POST /tasks/
+2026-05-30 18:03:22,024 - ERROR - [Request-ID: 5b0eb690-8e56-41a7-beb0-b65afcb5ddf8] - Execution Fault: POST /tasks/ failed after 1.65ms. Detail: can't compare offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "/home/miracle/.local/lib/python3.10/site-packages/anyio/streams/memory.py", line 132, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Desktop/TODO/app/middleware/logging_middleware.py", line 23, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/.local/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/.local/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/.local/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Desktop/TODO/app/schemas/schemas.py", line 33, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-30 18:08:28,189 - INFO - [Request-ID: bfeebf89-9470-4591-9006-8857132c6a91] - Incoming: POST /tasks/
+2026-05-30 18:08:28,191 - INFO - [Request-ID: bfeebf89-9470-4591-9006-8857132c6a91] - Outgoing: POST /tasks/ | Status: 422 | Duration: 1.37ms
