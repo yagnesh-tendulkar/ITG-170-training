@@ -11,3 +11,8 @@ def init_db():
 def get_database_session():
     with Session(engine) as session:
         yield session
+
+
+def boot_database():
+    """Convenience wrapper used during app startup to initialize the database."""
+    init_db()

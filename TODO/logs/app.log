@@ -464,3 +464,27 @@ Traceback (most recent call last):
 TypeError: can't compare offset-naive and offset-aware datetimes
 2026-05-30 18:08:28,189 - INFO - [Request-ID: bfeebf89-9470-4591-9006-8857132c6a91] - Incoming: POST /tasks/
 2026-05-30 18:08:28,191 - INFO - [Request-ID: bfeebf89-9470-4591-9006-8857132c6a91] - Outgoing: POST /tasks/ | Status: 422 | Duration: 1.37ms
+2026-05-31 19:32:31,984 - INFO - [Request-ID: d526a7db15231d8045ae2a99ca6a9568] - Incoming: GET /
+2026-05-31 19:32:31,985 - INFO - [Request-ID: d526a7db15231d8045ae2a99ca6a9568] - Outgoing: GET / | Status: 404 | Duration: 0.94ms
+2026-05-31 19:32:32,889 - INFO - [Request-ID: d777a1d85e56e58f737f42e49c230c1d] - Incoming: GET /favicon.ico
+2026-05-31 19:32:32,890 - INFO - [Request-ID: d777a1d85e56e58f737f42e49c230c1d] - Outgoing: GET /favicon.ico | Status: 404 | Duration: 0.78ms
+2026-05-31 19:32:39,288 - INFO - [Request-ID: 10fa08d83f99074f170948975f8600e3] - Incoming: GET /docs
+2026-05-31 19:32:39,288 - INFO - [Request-ID: 10fa08d83f99074f170948975f8600e3] - Outgoing: GET /docs | Status: 200 | Duration: 0.7ms
+2026-05-31 19:32:39,974 - INFO - [Request-ID: 828329abea8c8e32d021fa3536349c1a] - Incoming: GET /openapi.json
+2026-05-31 19:32:39,985 - INFO - [Request-ID: 828329abea8c8e32d021fa3536349c1a] - Outgoing: GET /openapi.json | Status: 200 | Duration: 11.07ms
+2026-05-31 19:32:44,693 - INFO - [Request-ID: 449d03406722ab4f2c70e04dfef8e2fe] - Incoming: GET /health
+2026-05-31 19:32:44,694 - INFO - [Request-ID: 449d03406722ab4f2c70e04dfef8e2fe] - Outgoing: GET /health | Status: 200 | Duration: 1.54ms
+2026-05-31 19:32:53,428 - INFO - [Request-ID: d3e3e955b75791af0d6d72bae58f1971] - Incoming: GET /tasks/
+2026-05-31 19:32:53,441 - INFO - [Request-ID: d3e3e955b75791af0d6d72bae58f1971] - Outgoing: GET /tasks/ | Status: 200 | Duration: 13.27ms
+2026-05-31 19:33:21,826 - INFO - [Request-ID: e79f28d09ba076987e856e26b2320ddd] - Incoming: GET /tasks/10
+2026-05-31 19:33:21,831 - INFO - [Request-ID: e79f28d09ba076987e856e26b2320ddd] - Outgoing: GET /tasks/10 | Status: 404 | Duration: 5.53ms
+2026-05-31 19:33:32,341 - INFO - [Request-ID: 125eb29036e2308c8e19a83bdf1cac48] - Incoming: GET /tasks/1
+2026-05-31 19:33:32,344 - INFO - [Request-ID: 125eb29036e2308c8e19a83bdf1cac48] - Outgoing: GET /tasks/1 | Status: 200 | Duration: 3.22ms
+2026-05-31 19:33:56,263 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Incoming: GET /tasks/1/stream
+2026-05-31 19:33:56,265 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Streaming job sequence initialized for task 1
+2026-05-31 19:33:56,265 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Outgoing: GET /tasks/1/stream | Status: 200 | Duration: 2.12ms
+2026-05-31 19:33:57,764 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [1/5]: Initializing worker environment...
+2026-05-31 19:33:59,264 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [2/5]: Fetching data payloads from storage cache...
+2026-05-31 19:34:00,765 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [3/5]: Executing heavy vector calculations and embedding text fields...
+2026-05-31 19:34:02,266 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [4/5]: Cleaning transient system memory structures...
+2026-05-31 19:34:03,767 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [5/5]: Task sync completed successfully!
