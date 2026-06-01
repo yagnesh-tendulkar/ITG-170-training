@@ -1,0 +1,22 @@
+import os
+from fastapi import UploadFile
+
+UPLOAD_DIR = "uploads"
+
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+def save_file(file: UploadFile):
+    file_path = os.path.join(UPLOAD_DIR, file.filename)
+
+    # avoid overwrite
+    counter = 1
+    base, ext = os.path.splitext(file.filename)
+
+    while os.path.exists(file_path):
+        file_path = os.path.join(UPLOAD_DIR, f"{base}_{counter}{ext}")
+        counter += 1
+
+    with open(file_path, "wb") as f:
+        f.write(file.file.read())
+
+    return file_path
