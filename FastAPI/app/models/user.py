@@ -1,14 +1,17 @@
-from sqlalchemy import Column, Integer, String, DateTime
-from sqlalchemy.sql import func
+from sqlalchemy import Boolean, Column, Integer, String
 
-from app.database.database import Base
+from app.models import Base
+
 
 class User(Base):
-    __tablename__ = "user"
-    id = Column(Integer, primary_key=True, index=True)
-    full_name = Column(String, nullable=False)
-    email = Column(String, nullable=False)
-    password = Column(String, nullable=False)
+    __tablename__ = "users"
 
-    created_at = Column(DateTime, default=func.now())
-    
+    id = Column(Integer, primary_key=True, index=True)
+
+    username = Column(String, unique=True, nullable=False)
+
+    email = Column(String, unique=True, nullable=False)
+
+    password_hash = Column(String, nullable=False)
+
+    is_active = Column(Boolean, default=True)
