@@ -1,44 +1,32 @@
-# from pydantic import BaseModel
-# from fastapi import APIRouter, HTTPException
-# from auth.jwt_handler import create_token
 
-# router = APIRouter()
-
-# HR_USER = "hr"
-# HR_PASS = "1234"
-
-
-# class LoginRequest(BaseModel):
-#     username: str
-#     password: str
-
-
-# @router.post("/login")
-# def login(data: LoginRequest):
-
-#     if data.username != HR_USER or data.password != HR_PASS:
-#         raise HTTPException(status_code=401, detail="Invalid username or password")
-
-#     token = create_token({"user": data.username, "role": "hr"})
-#     return {"token": token}
+import hashlib
 
 from fastapi import APIRouter, HTTPException
 from auth.jwt_handler import create_token
+from database.db import mycursor
 from utils.audit import log_action
 
 router = APIRouter()
 
-HR_USER = "hr"
-HR_PASS = "1234"
+
+def _hash_password(password: str) -> str:
+    return hashlib.sha256(password.encode()).hexdigest()
+
+
+def get_hr_user(username: str):
+    query = "SELECT username, password_hash, role FROM hr_users WHERE username=%s"
+    mycursor.execute(query, (username,))
+    return mycursor.fetchone()
 
 
 @router.post("/login")
 def login(username: str, password: str):
 
-    if username != HR_USER or password != HR_PASS:
+    user = get_hr_user(username)
+    if not user or user["password_hash"] != _hash_password(password):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    token = create_token({"user": username})
+    token = create_token({"user": user["username"], "role": user["role"]})
 
     try:
         log_action(username, "LOGIN")

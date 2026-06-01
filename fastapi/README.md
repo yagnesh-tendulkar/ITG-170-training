@@ -55,7 +55,8 @@ http://127.0.0.1:8000
 
 ### JWT Login
 
-Use the `/login` endpoint with these credentials:
+Use the `/login` endpoint with credentials stored in the database.
+A default HR account is created automatically if missing.
 
 - username: `hr`
 - password: `1234`
