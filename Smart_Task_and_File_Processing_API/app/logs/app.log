@@ -1,0 +1,27 @@
+2026-06-01 15:40:32,530 - INFO - smart_task_api - Request Started | Method=GET Path=/
+2026-06-01 15:40:32,530 - INFO - smart_task_api - Request ID Generated: 4e1ef2e6-1ba2-4da0-b89e-7dc03bef6c32
+2026-06-01 15:40:32,533 - INFO - smart_task_api - Request Completed | Method=GET Path=/ Status=200 Time=3.71ms
+2026-06-01 15:40:32,557 - INFO - smart_task_api - Request Started | Method=GET Path=/favicon.ico
+2026-06-01 15:40:32,558 - INFO - smart_task_api - Request ID Generated: 4699e7e7-26f7-4117-b6fe-6291f8901d2d
+2026-06-01 15:40:32,559 - INFO - smart_task_api - Request Completed | Method=GET Path=/favicon.ico Status=404 Time=1.62ms
+2026-06-01 15:40:40,957 - INFO - smart_task_api - Request Started | Method=GET Path=/docs
+2026-06-01 15:40:40,957 - INFO - smart_task_api - Request ID Generated: f4c9e742-bebd-4328-91d5-d6c730e7f257
+2026-06-01 15:40:40,958 - INFO - smart_task_api - Request Completed | Method=GET Path=/docs Status=200 Time=1.41ms
+2026-06-01 15:40:41,242 - INFO - smart_task_api - Request Started | Method=GET Path=/openapi.json
+2026-06-01 15:40:41,242 - INFO - smart_task_api - Request ID Generated: a5e6b154-ba1a-460a-af96-5f525aef4e7d
+2026-06-01 15:40:41,256 - INFO - smart_task_api - Request Completed | Method=GET Path=/openapi.json Status=200 Time=13.82ms
+2026-06-01 15:48:04,430 - INFO - smart_task_api - Request Started | Method=POST Path=/auth/register
+2026-06-01 15:48:04,430 - INFO - smart_task_api - Request ID Generated: c433d438-6986-494b-af07-a966206e1b17
+2026-06-01 15:48:04,434 - INFO - smart_task_api - Request Completed | Method=POST Path=/auth/register Status=422 Time=4.63ms
+2026-06-01 15:48:28,842 - INFO - smart_task_api - Request Started | Method=POST Path=/auth/register
+2026-06-01 15:48:28,842 - INFO - smart_task_api - Request ID Generated: a7bf340b-7959-41d9-9f11-f73ef7c2caff
+2026-06-01 15:48:29,060 - INFO - smart_task_api - Request Completed | Method=POST Path=/auth/register Status=200 Time=218.38ms
+2026-06-01 15:49:07,915 - INFO - smart_task_api - Request Started | Method=POST Path=/auth/login
+2026-06-01 15:49:07,915 - INFO - smart_task_api - Request ID Generated: 8cce34da-ff1d-4da2-a630-638888ff5ba6
+2026-06-01 15:49:08,114 - INFO - smart_task_api - Request Completed | Method=POST Path=/auth/login Status=401 Time=199.74ms
+2026-06-01 15:49:18,481 - INFO - smart_task_api - Request Started | Method=POST Path=/auth/login
+2026-06-01 15:49:18,481 - INFO - smart_task_api - Request ID Generated: 9f0101d7-d188-459c-bc6b-787622f276d0
+2026-06-01 15:49:18,677 - INFO - smart_task_api - Request Completed | Method=POST Path=/auth/login Status=401 Time=195.83ms
+2026-06-01 15:49:56,712 - INFO - smart_task_api - Request Started | Method=POST Path=/auth/login
+2026-06-01 15:49:56,712 - INFO - smart_task_api - Request ID Generated: beec087e-3eb1-4ee9-a2de-5707a782e678
+2026-06-01 15:49:56,910 - INFO - smart_task_api - Request Completed | Method=POST Path=/auth/login Status=200 Time=197.91ms
