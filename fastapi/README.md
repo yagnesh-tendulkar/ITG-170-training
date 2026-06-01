@@ -26,16 +26,21 @@ pip install -r requirements.txt
 
 ## Configuration
 
-The app connects to a MySQL database using values from `database/db.py`:
+The app loads configuration from environment variables or a `.env` file.
+Create a `fastapi/.env` file with values for:
 
-- host: `localhost`
-- user: `root`
-- password: `M1racle@123`
-- database: `fastapi`
+- `DB_HOST`
+- `DB_USER`
+- `DB_PASSWORD`
+- `DB_NAME`
+- `JWT_SECRET`
+- `HR_USERNAME`
+- `HR_PASSWORD`
+- `HR_ROLE` (optional, default `HR`)
 
-The database module also creates the `employees` table automatically if it does not exist.
+The database module also creates the `employees` and `hr_users` tables automatically if they do not exist.
 
-> Update `database/db.py` with your own MySQL credentials before running in a production environment.
+> Do not store credentials in code. Add `.env` to `.gitignore` and keep secrets out of version control.
 
 ## Start the Server
 
@@ -55,11 +60,8 @@ http://127.0.0.1:8000
 
 ### JWT Login
 
-Use the `/login` endpoint with credentials stored in the database.
-A default HR account is created automatically if missing.
-
-- username: `hr`
-- password: `1234`
+Use the `/login` endpoint after setting the HR credentials in `.env`.
+If `HR_USERNAME` and `HR_PASSWORD` are supplied, the app will seed that user automatically when the database is initialized.
 
 Request example:
 

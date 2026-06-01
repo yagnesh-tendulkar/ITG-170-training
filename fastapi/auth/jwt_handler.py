@@ -1,8 +1,15 @@
-import jwt
 import datetime
+import os
+
+import jwt
+from dotenv import load_dotenv
 from fastapi import HTTPException
 
-SECRET = "mysecret"
+load_dotenv()
+
+SECRET = os.getenv("JWT_SECRET")
+if not SECRET:
+    raise ValueError("JWT_SECRET is required. Set it in .env or the environment.")
 
 
 def create_token(data: dict):

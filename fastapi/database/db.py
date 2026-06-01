@@ -1,15 +1,32 @@
 import hashlib
+import os
+
+from dotenv import load_dotenv
 import mysql.connector
 
-mydb=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="M1racle@123",
-    database="fastapi"
+load_dotenv()
+
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+HR_USERNAME = os.getenv("HR_USERNAME")
+HR_PASSWORD = os.getenv("HR_PASSWORD")
+HR_ROLE = os.getenv("HR_ROLE", "HR")
+
+if not all([DB_HOST, DB_USER, DB_PASSWORD, DB_NAME]):
+    raise ValueError(
+        "Database credentials are required. Set DB_HOST, DB_USER, DB_PASSWORD and DB_NAME in .env or the environment."
+    )
+
+mydb = mysql.connector.connect(
+    host=DB_HOST,
+    user=DB_USER,
+    password=DB_PASSWORD,
+    database=DB_NAME,
 )
 
-
-mycursor=mydb.cursor(dictionary=True)
+mycursor = mydb.cursor(dictionary=True)
 mycursor.execute("""
 CREATE TABLE IF NOT EXISTS employees (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -38,11 +55,14 @@ def _hash_password(password: str) -> str:
 
 
 def _ensure_default_hr_user() -> None:
-    mycursor.execute("SELECT id FROM hr_users WHERE username=%s", ("hr",))
+    if not HR_USERNAME or not HR_PASSWORD:
+        return
+
+    mycursor.execute("SELECT id FROM hr_users WHERE username=%s", (HR_USERNAME,))
     if mycursor.fetchone() is None:
         mycursor.execute(
             "INSERT INTO hr_users (username, password_hash, role) VALUES (%s, %s, %s)",
-            ("hr", _hash_password("1234"), "HR"),
+            (HR_USERNAME, _hash_password(HR_PASSWORD), HR_ROLE),
         )
         mydb.commit()
 
