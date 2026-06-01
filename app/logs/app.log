@@ -1,0 +1,1089 @@
+2026-05-28 16:24:25 INFO main Smart Task API started successfully
+2026-05-28 16:28:24 INFO middleware [d3ae250d-c9fc-4052-b800-f01c78b54676] GET / → 200 (1.56ms)
+2026-05-28 16:28:33 INFO middleware [934ddf78-c675-4571-9f38-2deeb538f6ab] GET /docs → 200 (0.3ms)
+2026-05-28 16:28:33 INFO middleware [e59558cc-f2ee-4910-a9ea-189b98c44a9c] GET /openapi.json → 200 (20.33ms)
+2026-05-28 16:29:22 INFO middleware [0e32bc26-f07b-4ce6-8212-c11a743b2af2] GET /health → 200 (2.31ms)
+2026-05-28 16:29:39 CRITICAL exceptions Unhandled exception on http://127.0.0.1:8000/metrics: (pymysql.err.ProgrammingError) (1146, "Table 'Maindb.users' doesn't exist")
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.hashed_password AS users_hashed_password, users.age AS users_age, users.is_active AS users_is_active, users.api_key AS users_api_key, users.created_at AS users_created_at 
+FROM users) AS anon_1]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/cursors.py", line 159, in execute
+    result = self._query(query)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/cursors.py", line 330, in _query
+    conn.query(q)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 847, in _read_query_result
+    result.read()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.ProgrammingError: (1146, "Table 'Maindb.users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    await responder(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    await self.app(scope, receive, self.send_with_gzip)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/home/miracle/Downloads/app/routes/health.py", line 29, in metrics
+    total_users = db.query(User).count()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 3112, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2805, in scalar
+    ret = self.one()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2778, in one
+    return self._iter().one()  # type: ignore
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/cursors.py", line 159, in execute
+    result = self._query(query)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/cursors.py", line 330, in _query
+    conn.query(q)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 847, in _read_query_result
+    result.read()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'Maindb.users' doesn't exist")
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.hashed_password AS users_hashed_password, users.age AS users_age, users.is_active AS users_is_active, users.api_key AS users_api_key, users.created_at AS users_created_at 
+FROM users) AS anon_1]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-05-28 18:54:17 INFO main Smart Task API started successfully
+2026-05-28 18:54:21 INFO middleware [381b4849-473b-419b-83a4-afc24c3b1c79] GET / → 200 (1.31ms)
+2026-05-28 18:54:21 INFO middleware [c9b8bc69-b1db-4313-bc32-bce85d14ae9c] GET / → 200 (2.38ms)
+2026-05-28 18:54:33 INFO middleware [36515618-4603-4c68-b6b0-3c304ca28ed4] GET /docs → 200 (0.29ms)
+2026-05-28 18:54:33 INFO middleware [38c88216-102a-4046-a586-8aaed1390fb8] GET /openapi.json → 200 (22.86ms)
+2026-05-28 18:57:58 CRITICAL exceptions Unhandled exception on http://127.0.0.1:8000/users: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+  |     yield
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 190, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    |     await responder(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    |     await self.app(scope, receive, self.send_with_gzip)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    |     response = await func(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func, *args)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    |     return await future
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    |     result = context.run(func, *args)
+    |   File "/home/miracle/Downloads/app/routes/users.py", line 23, in create_user
+    |     hashed_password=hash_password(payload.password),
+    |   File "/home/miracle/Downloads/app/utils/security.py", line 15, in hash_password
+    |     return pwd_context.hash(password)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/context.py", line 2258, in hash
+    |     return record.hash(secret, **kwds)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 779, in hash
+    |     self.checksum = self._calc_checksum(secret)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 591, in _calc_checksum
+    |     self._stub_requires_backend()
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2254, in _stub_requires_backend
+    |     cls.set_backend()
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2156, in set_backend
+    |     return owner.set_backend(name, dryrun=dryrun)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2163, in set_backend
+    |     return cls.set_backend(name, dryrun=dryrun)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2188, in set_backend
+    |     cls._set_backend(name, dryrun)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2311, in _set_backend
+    |     super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2224, in _set_backend
+    |     ok = loader(**kwds)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 626, in _load_backend_mixin
+    |     return mixin_cls._finalize_backend_mixin(name, dryrun)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 421, in _finalize_backend_mixin
+    |     if detect_wrap_bug(IDENT_2A):
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 380, in detect_wrap_bug
+    |     if verify(secret, bug_hash):
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 792, in verify
+    |     return consteq(self._calc_checksum(secret), chk)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 655, in _calc_checksum
+    |     hash = _bcrypt.hashpw(secret, config)
+    | ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    await responder(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    await self.app(scope, receive, self.send_with_gzip)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/home/miracle/Downloads/app/routes/users.py", line 23, in create_user
+    hashed_password=hash_password(payload.password),
+  File "/home/miracle/Downloads/app/utils/security.py", line 15, in hash_password
+    return pwd_context.hash(password)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2163, in set_backend
+    return cls.set_backend(name, dryrun=dryrun)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2188, in set_backend
+    cls._set_backend(name, dryrun)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2311, in _set_backend
+    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 2224, in _set_backend
+    ok = loader(**kwds)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 626, in _load_backend_mixin
+    return mixin_cls._finalize_backend_mixin(name, dryrun)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 421, in _finalize_backend_mixin
+    if detect_wrap_bug(IDENT_2A):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 380, in detect_wrap_bug
+    if verify(secret, bug_hash):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/utils/handlers.py", line 792, in verify
+    return consteq(self._calc_checksum(secret), chk)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 655, in _calc_checksum
+    hash = _bcrypt.hashpw(secret, config)
+ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-05-28 19:01:16 INFO main Smart Task API started successfully
+2026-05-28 19:01:19 INFO middleware [a23c76f1-06e8-497f-b31b-2cb23ac931e7] GET / → 200 (1.16ms)
+2026-05-28 19:01:28 INFO middleware [d54747c7-c949-492e-9994-d5d805a9fbf3] GET /docs → 200 (0.4ms)
+2026-05-28 19:01:28 INFO middleware [8c033b5e-d66e-42d9-9a66-62ecc2d70ea1] GET /openapi.json → 200 (15.06ms)
+2026-05-28 19:02:10 INFO middleware [4be0ce51-80d4-4020-825a-a5f4565ec1ad] POST /users → 201 (307.89ms)
+2026-05-28 19:02:50 INFO middleware [60337e33-9b6a-42cd-a734-eae146a18fb4] GET /users → 200 (27.91ms)
+2026-05-28 19:03:28 INFO middleware [0f951373-af0b-448b-89d2-8295e26bad67] GET /users → 200 (2.72ms)
+2026-05-28 19:12:29 INFO middleware [3651bdc1-7664-47ce-9ea8-6321813998ee] POST /users/login → 200 (252.22ms)
+2026-05-28 19:24:34 CRITICAL exceptions Unhandled exception on http://127.0.0.1:8000/tasks: can't compare offset-naive and offset-aware datetimes
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+  |     yield
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 190, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    |     await responder(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    |     await self.app(scope, receive, self.send_with_gzip)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    |     response = await func(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    |     solved_result = await solve_dependencies(
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    |     ) = await request_body_to_args(  # body_params checked above
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    |     v_, errors_ = field.validate(value, values, loc=loc)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    |     self._type_adapter.validate_python(value, from_attributes=True),
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    |     return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+    |   File "/home/miracle/Downloads/app/schemas/task.py", line 35, in validate_due_date
+    |     if self.due_date and self.due_date < datetime.utcnow():
+    | TypeError: can't compare offset-naive and offset-aware datetimes
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    await responder(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    await self.app(scope, receive, self.send_with_gzip)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Downloads/app/schemas/task.py", line 35, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-28 19:25:23 ERROR exceptions HTTPException 401 on http://127.0.0.1:8000/tasks: Not authenticated — provide a Bearer token or X-API-Key
+2026-05-28 19:25:23 INFO middleware [6fea5513-8c80-4fbd-9bac-07bab3d05b62] POST /tasks → 401 (1.54ms)
+2026-05-29 10:25:53 INFO main Smart Task API started successfully
+2026-05-29 10:25:53 INFO middleware [329d048c-5a5d-4768-ae2a-e86215d06552] GET / → 200 (1.02ms)
+2026-05-29 10:25:53 INFO middleware [d2521dec-d23c-48ad-8b53-22e68881a9f6] GET /favicon.ico → 404 (0.34ms)
+2026-05-29 10:26:02 INFO middleware [1a770445-dcdd-43c8-8754-6433a789be69] GET /docs → 200 (0.66ms)
+2026-05-29 10:26:02 INFO middleware [8c7af015-73b2-4900-9d96-081af58a7e85] GET /openapi.json → 200 (133.12ms)
+2026-05-29 10:26:23 INFO middleware [ea75bbe9-c117-4860-87cf-8b548d50ed06] GET /users → 200 (45.68ms)
+2026-05-29 10:27:33 ERROR exceptions HTTPException 401 on http://127.0.0.1:8000/users/login: Invalid credentials
+2026-05-29 10:27:33 INFO middleware [90ea7944-ff41-42da-bde6-5daba83cb836] POST /users/login → 401 (249.2ms)
+2026-05-29 10:27:50 ERROR exceptions HTTPException 401 on http://127.0.0.1:8000/users/login: Invalid credentials
+2026-05-29 10:27:50 INFO middleware [5b0a996b-8d28-4ddb-96b0-b84d93575c78] POST /users/login → 401 (193.96ms)
+2026-05-29 10:28:12 INFO middleware [75b0a658-a9d2-433e-9a0a-b796046d16fc] POST /users/login → 200 (272.44ms)
+2026-05-29 10:29:14 CRITICAL exceptions Unhandled exception on http://127.0.0.1:8000/tasks: can't compare offset-naive and offset-aware datetimes
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+  |     yield
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 190, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    |     await responder(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    |     await self.app(scope, receive, self.send_with_gzip)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    |     response = await func(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    |     solved_result = await solve_dependencies(
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    |     ) = await request_body_to_args(  # body_params checked above
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    |     v_, errors_ = field.validate(value, values, loc=loc)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    |     self._type_adapter.validate_python(value, from_attributes=True),
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    |     return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+    |   File "/home/miracle/Downloads/app/schemas/task.py", line 35, in validate_due_date
+    |     if self.due_date and self.due_date < datetime.utcnow():
+    | TypeError: can't compare offset-naive and offset-aware datetimes
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    await responder(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    await self.app(scope, receive, self.send_with_gzip)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 628, in solve_dependencies
+    ) = await request_body_to_args(  # body_params checked above
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 758, in request_body_to_args
+    v_, errors_ = field.validate(value, values, loc=loc)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/fastapi/_compat.py", line 127, in validate
+    self._type_adapter.validate_python(value, from_attributes=True),
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/pydantic/type_adapter.py", line 260, in validate_python
+    return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
+  File "/home/miracle/Downloads/app/schemas/task.py", line 35, in validate_due_date
+    if self.due_date and self.due_date < datetime.utcnow():
+TypeError: can't compare offset-naive and offset-aware datetimes
+2026-05-29 10:36:02 INFO main Smart Task API started successfully
+2026-05-29 10:36:10 INFO middleware [07508f50-14e1-43ce-87ee-fa95e3673a77] GET /docs → 200 (0.61ms)
+2026-05-29 10:36:10 INFO middleware [92cfe0a8-cf75-4bdb-8203-9a231cd7daf5] GET /openapi.json → 200 (17.56ms)
+2026-05-29 10:36:41 INFO middleware [569aeeae-d9b7-4c08-aff4-68601ac3de8c] POST /users/login → 200 (220.61ms)
+2026-05-29 10:37:30 ERROR exceptions ValidationError on http://127.0.0.1:8000/tasks: [{'type': 'value_error', 'loc': ('body',), 'msg': 'Value error, Due date cannot be in the past', 'input': {'title': 'string', 'description': 'string', 'priority': 'medium', 'tags': [], 'due_date': '2026-05-29T05:07:13.085Z'}, 'ctx': {'error': ValueError('Due date cannot be in the past')}}]
+2026-05-29 10:37:30 CRITICAL exceptions Unhandled exception on http://127.0.0.1:8000/tasks: Object of type ValueError is not JSON serializable
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+  |     yield
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 190, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    |     await responder(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    |     await self.app(scope, receive, self.send_with_gzip)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 75, in wrapped_app
+    |     response = await handler(conn, exc)
+    |   File "/home/miracle/Downloads/app/exceptions/handlers.py", line 44, in validation_error_handler
+    |     return JSONResponse(
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/responses.py", line 184, in __init__
+    |     super().__init__(content, status_code, headers, media_type, background)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/responses.py", line 41, in __init__
+    |     self.body = self.render(content)
+    |   File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/responses.py", line 187, in render
+    |     return json.dumps(
+    |   File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    |     **kw).encode(obj)
+    |   File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    |     chunks = self.iterencode(o, _one_shot=True)
+    |   File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    |     return _iterencode(o, 0)
+    |   File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    |     raise TypeError(f'Object of type {o.__class__.__name__} '
+    | TypeError: Object of type ValueError is not JSON serializable
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 21, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/miracle/Downloads/app/middleware/middlewares.py", line 31, in dispatch
+    response = await call_next(request)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/trustedhost.py", line 36, in __call__
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    await responder(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    await self.app(scope, receive, self.send_with_gzip)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 75, in wrapped_app
+    response = await handler(conn, exc)
+  File "/home/miracle/Downloads/app/exceptions/handlers.py", line 44, in validation_error_handler
+    return JSONResponse(
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/responses.py", line 184, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/responses.py", line 41, in __init__
+    self.body = self.render(content)
+  File "/home/miracle/Downloads/app/.venv/lib/python3.10/site-packages/starlette/responses.py", line 187, in render
+    return json.dumps(
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ValueError is not JSON serializable
+2026-05-29 10:39:43 INFO main Smart Task API started successfully
+2026-05-29 10:39:48 INFO middleware [808a06ba-3ae7-4fcb-b173-68e86e9cb960] GET /docs → 200 (0.45ms)
+2026-05-29 10:39:48 INFO middleware [e6a5c209-a0e5-411b-8bb6-3ca85bd2c413] GET /openapi.json → 200 (18.37ms)
+2026-05-29 10:40:10 INFO middleware [d00e6b8d-5693-4449-91fb-ff07cca8145c] POST /users/login → 200 (220.7ms)
+2026-05-29 10:41:05 ERROR exceptions ValidationError on http://127.0.0.1:8000/tasks: [{'type': 'value_error', 'loc': ('body',), 'msg': 'Value error, Due date cannot be in the past', 'input': {'title': 'string', 'description': 'string', 'priority': 'medium', 'tags': [], 'due_date': '2026-05-29T05:10:51.020Z'}, 'ctx': {'error': ValueError('Due date cannot be in the past')}}]
+2026-05-29 10:41:05 INFO middleware [12a6c394-006f-4483-8127-5057b40cab18] POST /tasks → 422 (5.74ms)
+2026-05-29 10:44:25 ERROR exceptions ValidationError on http://127.0.0.1:8000/tasks: [{'type': 'json_invalid', 'loc': ('body', 60), 'msg': 'JSON decode error', 'input': {}, 'ctx': {'error': "Expecting ',' delimiter"}}]
+2026-05-29 10:44:25 INFO middleware [3776b5d8-67de-4d48-840a-8c0515f7e56f] POST /tasks → 422 (1.29ms)
+2026-05-29 10:47:17 INFO main Smart Task API started successfully
+2026-05-29 10:48:07 INFO middleware [d330542f-9fc2-4f90-878f-66a3cfb74d77] GET /docs → 200 (0.41ms)
+2026-05-29 10:48:07 INFO middleware [90e014de-72d8-4fad-90e0-c551daece277] GET /openapi.json → 200 (18.29ms)
+2026-05-29 10:48:40 INFO middleware [78d6aa32-ab88-48a9-9731-4fcfef024a5d] POST /users/login → 200 (219.42ms)
+2026-05-29 10:50:23 ERROR exceptions ValidationError on http://127.0.0.1:8000/tasks: [{'type': 'value_error', 'loc': ('body', 'due_date'), 'msg': 'Value error, Due date cannot be in the past', 'input': '2026-05-29T05:19:36.968Z', 'ctx': {'error': ValueError('Due date cannot be in the past')}}]
+2026-05-29 10:50:23 INFO middleware [3572a1b3-212a-4655-9b89-23f8695d42b8] POST /tasks → 422 (7.08ms)
+2026-05-29 10:51:19 INFO middleware [98ac3f90-07c6-4fe3-b221-39e54a2b9d24] POST /tasks → 201 (141.03ms)
+2026-05-29 10:51:19 INFO background_tasks Sending email to vaish@example.com about task: 'learn python'
+2026-05-29 10:51:20 INFO background_tasks Email sent successfully to vaish@example.com
+2026-05-29 10:52:15 INFO middleware [d87ff885-83c3-4eb6-9403-2fc8c38005ae] GET /tasks → 200 (8.26ms)
+2026-05-29 10:53:03 INFO middleware [8ba82e25-6adc-40c1-bc7c-876d9dfaccc2] GET /tasks/1 → 200 (6.99ms)
+2026-05-29 10:53:53 ERROR exceptions ValidationError on http://127.0.0.1:8000/tasks/1: [{'type': 'value_error', 'loc': ('body', 'due_date'), 'msg': 'Value error, Due date cannot be in the past', 'input': '2026-05-29T05:23:25.205Z', 'ctx': {'error': ValueError('Due date cannot be in the past')}}]
+2026-05-29 10:53:53 INFO middleware [73ee69fe-8898-48c0-ba0f-bd5e7624edf2] PATCH /tasks/1 → 422 (4.5ms)
+2026-05-29 10:54:29 INFO middleware [446dfaf7-ff02-46af-a716-4f0c675765d0] PATCH /tasks/1 → 200 (251.49ms)
+2026-05-29 10:55:03 INFO middleware [d17d8aeb-8923-46e7-bef3-db1cc6e7e8a0] DELETE /tasks/1 → 204 (165.88ms)
+2026-05-29 10:55:21 INFO middleware [c2992e5c-0b19-4cb3-a2d3-df387fb37f44] GET /tasks → 200 (4.74ms)
+2026-05-29 10:56:05 WARNING exceptions Task 1 not found
+2026-05-29 10:56:05 INFO middleware [fea87758-b785-454b-8973-8469de7c979a] POST /tasks/1/upload → 404 (83.6ms)
+2026-05-29 10:56:27 INFO middleware [9110c20f-c8b5-4fc9-8c8e-72b746bfb57e] POST /tasks → 201 (134.62ms)
+2026-05-29 10:56:27 INFO background_tasks Sending email to vaish@example.com about task: 'learn python'
+2026-05-29 10:56:28 INFO background_tasks Email sent successfully to vaish@example.com
+2026-05-29 10:58:36 ERROR exceptions ValidationError on http://127.0.0.1:8000/tasks/2/upload: [{'type': 'missing', 'loc': ('body', 'file'), 'msg': 'Field required', 'input': None}]
+2026-05-29 10:58:36 INFO middleware [8be1bd3f-70a2-4f36-be4e-83d60dbe4247] POST /tasks/2/upload → 422 (6.1ms)
+2026-05-29 11:15:50 INFO middleware [e41c4b3c-8680-457b-81f5-fc58540ca241] POST /tasks/2/upload → 200 (149.0ms)
+2026-05-29 11:16:48 INFO middleware [05333dd7-2a06-446d-b223-65a1aeb6aa67] GET /tasks/2/stream → 200 (4.14ms)
+2026-05-29 11:39:12 INFO middleware [7d14d484-fcaf-48a6-8afc-e7cd82a60c89] GET /docs → 200 (0.91ms)
+2026-05-29 11:39:12 INFO middleware [006ced6f-0d99-4d0c-8e8a-757d3778d0fc] GET /openapi.json → 200 (1.11ms)
+2026-05-29 14:42:09 INFO middleware [b2cf98ba-0d00-409a-b3e5-3125f010968c] GET / → 200 (0.74ms)
+2026-06-01 14:50:12 INFO main Smart Task API started successfully
+2026-06-01 14:51:37 INFO main Smart Task API started successfully
+2026-06-01 14:51:38 INFO middleware [3da24cd0-f8be-4b2d-b25c-cda276e784bb] POST /users → 201 (332.04ms)
+2026-06-01 14:51:38 INFO middleware [7c4d6fdf-7895-4430-86e2-744587788850] POST /users/login → 200 (195.28ms)
+2026-06-01 14:51:38 INFO middleware [e73f252c-000e-48e1-849c-c3a55639972b] POST /tasks → 201 (153.12ms)
+2026-06-01 14:51:38 INFO background_tasks Sending email to test@example.com about task: 'Learn FastAPI'
+2026-06-01 14:51:39 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:51:39 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:51:39 INFO middleware [8232a988-4d0c-4c12-ae76-2072505d1c1d] POST /users → 409 (3.53ms)
+2026-06-01 14:51:40 INFO middleware [597daf99-1583-4ecf-9fbe-af408e1d8533] POST /users/login → 200 (194.55ms)
+2026-06-01 14:51:40 ERROR exceptions ValidationError on http://testserver/tasks: [{'type': 'value_error', 'loc': ('body', 'title'), 'msg': 'Value error, Title must be at least 3 characters', 'input': 'AB', 'ctx': {'error': ValueError('Title must be at least 3 characters')}}]
+2026-06-01 14:51:40 INFO middleware [8762a064-4fb1-4993-bffc-fbc7e4ebc998] POST /tasks → 422 (2.77ms)
+2026-06-01 14:51:40 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:51:40 INFO middleware [30336595-dbc2-49ea-9e3e-d00a5e26b2ae] POST /users → 409 (2.76ms)
+2026-06-01 14:51:40 INFO middleware [01ec2ff4-169c-4c5d-829b-32493fb8b3fa] POST /users/login → 200 (192.12ms)
+2026-06-01 14:51:40 INFO middleware [e20aa09a-6493-4125-8263-1f19fb7d5dca] GET /tasks → 200 (4.13ms)
+2026-06-01 14:51:40 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:51:40 INFO middleware [3266b854-1639-4eed-920c-06e9611c7362] POST /users → 409 (2.39ms)
+2026-06-01 14:51:40 INFO middleware [2ff99536-31b2-46e7-993a-25d63f5b05b5] POST /users/login → 200 (192.91ms)
+2026-06-01 14:51:40 INFO middleware [447accbd-1fa5-40ce-82c7-a67b0bc5c70e] POST /tasks → 201 (141.7ms)
+2026-06-01 14:51:40 INFO background_tasks Sending email to test@example.com about task: 'Get single task'
+2026-06-01 14:51:41 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:51:41 INFO middleware [c7d649ff-2c18-4c33-8fdd-0368ee9a5cfc] GET /tasks/2 → 200 (17.45ms)
+2026-06-01 14:51:41 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:51:41 INFO middleware [7d79aff3-c2a0-47b4-9944-a997a7e03387] POST /users → 409 (2.35ms)
+2026-06-01 14:51:41 INFO middleware [4788978d-930b-42e1-858e-5f706aeaca2e] POST /users/login → 200 (194.2ms)
+2026-06-01 14:51:42 INFO middleware [75199292-f65b-4069-b665-d379aed7aa2d] POST /tasks → 201 (123.62ms)
+2026-06-01 14:51:42 INFO background_tasks Sending email to test@example.com about task: 'Patch me task'
+2026-06-01 14:51:43 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:51:43 INFO middleware [223dad05-2cd7-45e2-9bc7-6d0bc8b391cd] PATCH /tasks/3 → 200 (113.72ms)
+2026-06-01 14:51:43 INFO background_tasks Sending completion email to test@example.com for task: 'Patch me task'
+2026-06-01 14:51:44 INFO background_tasks Completion email sent to test@example.com
+2026-06-01 14:51:44 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:51:44 INFO middleware [2eb7154e-551f-4737-af06-bf7fe44c9537] POST /users → 409 (2.56ms)
+2026-06-01 14:51:44 INFO middleware [e6a5b529-002b-4b17-82f1-440fb0b5fde1] POST /users/login → 200 (192.34ms)
+2026-06-01 14:51:44 INFO middleware [98661ca3-2c65-4085-a139-1c6810943d55] POST /tasks → 201 (93.94ms)
+2026-06-01 14:51:44 INFO background_tasks Sending email to test@example.com about task: 'Delete me task'
+2026-06-01 14:51:45 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:51:45 INFO middleware [6eac0cdd-193a-4534-8d69-f6c743064374] DELETE /tasks/4 → 204 (116.56ms)
+2026-06-01 14:51:45 WARNING exceptions Task 4 not found
+2026-06-01 14:51:45 INFO middleware [b6bfabbb-baff-4516-8669-425bd848ddb3] GET /tasks/4 → 404 (2.81ms)
+2026-06-01 14:51:45 ERROR exceptions HTTPException 401 on http://testserver/tasks: Not authenticated — provide a Bearer token or X-API-Key
+2026-06-01 14:51:45 INFO middleware [1e3bb209-a8e5-47f0-a8ab-cb2a9cf33abd] GET /tasks → 401 (1.69ms)
+2026-06-01 14:51:45 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:51:45 INFO middleware [124540b4-17ab-453e-9845-5387c58e605a] POST /users → 409 (2.74ms)
+2026-06-01 14:51:45 INFO middleware [39521cc7-8239-4936-9952-813898e09b10] POST /users/login → 200 (192.91ms)
+2026-06-01 14:51:45 INFO middleware [8724aeff-0867-4776-945b-3c23c3cd0d33] POST /tasks → 201 (138.71ms)
+2026-06-01 14:51:45 INFO background_tasks Sending email to test@example.com about task: 'High priority task'
+2026-06-01 14:51:46 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:51:46 INFO middleware [0ba5635c-6ad6-48f3-8518-d4ecbba3fe8a] GET /tasks → 200 (15.5ms)
+2026-06-01 14:51:46 INFO middleware [d2fcb217-7c90-4261-ae63-fb634c1c31a2] GET /health → 200 (1.68ms)
+2026-06-01 14:51:47 INFO middleware [66d6bcbd-9778-4c6e-b02d-05013b1be2d0] GET /metrics → 200 (6.9ms)
+2026-06-01 14:51:47 INFO middleware [21975fac-3ad6-42d9-ba21-aff72823ddce] POST /users → 201 (307.5ms)
+2026-06-01 14:51:47 ERROR exceptions ValidationError on http://testserver/users: [{'type': 'value_error', 'loc': ('body', 'age'), 'msg': 'Value error, Age must be 18 or above', 'input': 16, 'ctx': {'error': ValueError('Age must be 18 or above')}}]
+2026-06-01 14:51:47 INFO middleware [d9bcdd76-807e-4d44-ac31-255394e71c44] POST /users → 422 (1.7ms)
+2026-06-01 14:51:47 INFO middleware [e810e564-ab83-4ae7-8424-70132571309d] POST /users → 201 (272.16ms)
+2026-06-01 14:51:47 WARNING exceptions Duplicate email: charlie@example.com
+2026-06-01 14:51:47 INFO middleware [3bdffe94-8232-49c9-a1a1-f8b625cd8a2c] POST /users → 409 (7.04ms)
+2026-06-01 14:51:47 INFO middleware [c00a0ecc-0cff-4508-ab76-07e91d4b5126] POST /users → 201 (282.93ms)
+2026-06-01 14:51:48 INFO middleware [e2d18d09-fa3b-4edc-bc7b-8499a69525aa] POST /users/login → 200 (234.21ms)
+2026-06-01 14:51:48 ERROR exceptions HTTPException 401 on http://testserver/users/login: Invalid credentials
+2026-06-01 14:51:48 INFO middleware [05433786-c019-4427-adc7-8ecec9100da4] POST /users/login → 401 (3.07ms)
+2026-06-01 14:51:48 INFO middleware [7a0b4f1c-e253-43ab-9127-5afa7be26817] GET /users → 200 (2.99ms)
+2026-06-01 14:54:34 INFO main Smart Task API started successfully
+2026-06-01 14:54:35 INFO middleware [6a762810-0347-47c4-bd6a-70753aa77a79] POST /users → 201 (344.52ms)
+2026-06-01 14:54:36 INFO middleware [aafd6aa1-4d25-467f-8b63-ad2a181bd4ff] POST /users/login → 200 (196.96ms)
+2026-06-01 14:54:36 INFO middleware [72538c83-32b3-4d09-8168-48a59dc11906] POST /tasks → 201 (150.19ms)
+2026-06-01 14:54:36 INFO background_tasks Sending email to test@example.com about task: 'Learn FastAPI'
+2026-06-01 14:54:37 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:54:37 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:54:37 INFO middleware [4e506d4c-e6fc-41cb-a814-ea515a77c229] POST /users → 409 (3.7ms)
+2026-06-01 14:54:37 INFO middleware [b4229255-c41c-47a5-bda0-b55f5865d659] POST /users/login → 200 (194.25ms)
+2026-06-01 14:54:37 ERROR exceptions ValidationError on http://testserver/tasks: [{'type': 'value_error', 'loc': ('body', 'title'), 'msg': 'Value error, Title must be at least 3 characters', 'input': 'AB', 'ctx': {'error': ValueError('Title must be at least 3 characters')}}]
+2026-06-01 14:54:37 INFO middleware [728b237e-8d28-4496-8b7e-a4a23d371c31] POST /tasks → 422 (2.8ms)
+2026-06-01 14:54:37 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:54:37 INFO middleware [a5535672-e057-4deb-a3fc-cee126289beb] POST /users → 409 (2.52ms)
+2026-06-01 14:54:37 INFO middleware [804f849d-21b4-4107-87f5-5c6e09f56477] POST /users/login → 200 (192.22ms)
+2026-06-01 14:54:37 INFO middleware [3554849a-3a08-4d5f-9e5b-a9cb57e51e93] GET /tasks → 200 (4.35ms)
+2026-06-01 14:54:37 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:54:37 INFO middleware [4332da6c-95cb-44e3-abc8-43494cd26774] POST /users → 409 (2.45ms)
+2026-06-01 14:54:37 INFO middleware [b91e48a4-2c8e-40aa-9226-f736490bb49e] POST /users/login → 200 (197.91ms)
+2026-06-01 14:54:38 INFO middleware [7318f401-dfb7-4ee6-ac9f-9b6872179cb3] POST /tasks → 201 (159.49ms)
+2026-06-01 14:54:38 INFO background_tasks Sending email to test@example.com about task: 'Get single task'
+2026-06-01 14:54:39 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:54:39 INFO middleware [036e4eab-9cdf-422f-b046-712aebbf43cb] GET /tasks/2 → 200 (3.69ms)
+2026-06-01 14:54:39 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:54:39 INFO middleware [e5980328-242a-45cb-a504-434115daf4c3] POST /users → 409 (2.7ms)
+2026-06-01 14:54:39 INFO middleware [f53c95e6-fda3-4394-b773-e7f8e5b7d742] POST /users/login → 200 (197.69ms)
+2026-06-01 14:54:39 INFO middleware [8a2e46c3-e864-43e7-a8c1-eac5597d040b] POST /tasks → 201 (125.37ms)
+2026-06-01 14:54:39 INFO background_tasks Sending email to test@example.com about task: 'Patch me task'
+2026-06-01 14:54:40 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:54:40 INFO middleware [6ade0d0d-c5fd-437f-898e-5c5f7c272f62] PATCH /tasks/3 → 200 (129.46ms)
+2026-06-01 14:54:40 INFO background_tasks Sending completion email to test@example.com for task: 'Patch me task'
+2026-06-01 14:54:41 INFO background_tasks Completion email sent to test@example.com
+2026-06-01 14:54:41 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:54:41 INFO middleware [ec577471-f8e3-4325-8b6c-08943ac07883] POST /users → 409 (2.62ms)
+2026-06-01 14:54:41 INFO middleware [5a87fa3b-a133-43e0-94cc-0184034ca921] POST /users/login → 200 (202.93ms)
+2026-06-01 14:54:41 INFO middleware [4a999a06-bfa7-4d70-a77e-be81406344df] POST /tasks → 201 (100.01ms)
+2026-06-01 14:54:41 INFO background_tasks Sending email to test@example.com about task: 'Delete me task'
+2026-06-01 14:54:42 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:54:42 INFO middleware [99b6c4db-6415-4990-8ba4-8b55eca37a5c] DELETE /tasks/4 → 204 (118.58ms)
+2026-06-01 14:54:43 WARNING exceptions Task 4 not found
+2026-06-01 14:54:43 INFO middleware [9f3578bb-3c2f-403e-9220-67fa4c020291] GET /tasks/4 → 404 (3.05ms)
+2026-06-01 14:54:43 ERROR exceptions HTTPException 401 on http://testserver/tasks: Not authenticated — provide a Bearer token or X-API-Key
+2026-06-01 14:54:43 INFO middleware [81f6d757-3c1f-47d3-8367-81162779ba4e] GET /tasks → 401 (2.14ms)
+2026-06-01 14:54:43 WARNING exceptions Duplicate email: test@example.com
+2026-06-01 14:54:43 INFO middleware [94ffe478-6dde-4983-a0c9-b4c1fee50c81] POST /users → 409 (2.99ms)
+2026-06-01 14:54:43 INFO middleware [b16ea89b-a559-4bc1-b2dd-60f86431c687] POST /users/login → 200 (196.14ms)
+2026-06-01 14:54:43 INFO middleware [c1265cc9-3317-4fad-86e0-1c4629440399] POST /tasks → 201 (313.28ms)
+2026-06-01 14:54:43 INFO background_tasks Sending email to test@example.com about task: 'High priority task'
+2026-06-01 14:54:44 INFO background_tasks Email sent successfully to test@example.com
+2026-06-01 14:54:44 INFO middleware [179dc689-7a6d-4269-b03d-3fc94054d785] GET /tasks → 200 (4.47ms)
+2026-06-01 14:54:44 INFO middleware [236ea71c-6294-4712-b24d-014c7c6907c2] GET /health → 200 (2.7ms)
+2026-06-01 14:54:44 INFO middleware [27be7664-60fa-4e26-9100-03043d4fed05] GET /metrics → 200 (9.44ms)
+2026-06-01 14:54:44 INFO middleware [49288b36-2915-4b8d-abc6-ae00ceed79c5] POST /users → 201 (289.45ms)
+2026-06-01 14:54:44 ERROR exceptions ValidationError on http://testserver/users: [{'type': 'value_error', 'loc': ('body', 'age'), 'msg': 'Value error, Age must be 18 or above', 'input': 16, 'ctx': {'error': ValueError('Age must be 18 or above')}}]
+2026-06-01 14:54:44 INFO middleware [9aa7471e-911b-4560-b164-116eff0c9fe7] POST /users → 422 (2.9ms)
+2026-06-01 14:54:45 INFO middleware [31516e2f-fa30-45cf-b244-bf5d57dfec5c] POST /users → 201 (298.93ms)
+2026-06-01 14:54:45 WARNING exceptions Duplicate email: charlie@example.com
+2026-06-01 14:54:45 INFO middleware [8195687b-5591-4555-9079-6496cdb212f6] POST /users → 409 (2.23ms)
+2026-06-01 14:54:45 INFO middleware [3e0fb8ef-d750-4b9e-8ce3-58d9564ac8a6] POST /users → 201 (294.22ms)
+2026-06-01 14:54:45 INFO middleware [533c6eea-85ba-4b43-9a85-6a84aab98567] POST /users/login → 200 (192.51ms)
+2026-06-01 14:54:45 ERROR exceptions HTTPException 401 on http://testserver/users/login: Invalid credentials
+2026-06-01 14:54:45 INFO middleware [9132bb8b-e27f-4246-acbc-bc0aeeb79ee7] POST /users/login → 401 (2.52ms)
+2026-06-01 14:54:45 INFO middleware [1b019420-d548-4e5c-bba2-ad7fef6ff7bc] GET /users → 200 (2.56ms)
+2026-06-01 14:55:28 INFO main Smart Task API started successfully
+2026-06-01 14:55:30 INFO middleware [10419cac-9fb9-4fe6-a559-33edb930a779] GET / → 200 (1.42ms)
+2026-06-01 14:55:31 INFO middleware [75b52a69-93bd-4646-a0ae-7e563592c331] GET /favicon.ico → 404 (0.48ms)
+2026-06-01 14:57:02 INFO middleware [b4eab113-c1ee-48cf-9634-8abfc075c500] GET /docs → 200 (0.41ms)
+2026-06-01 14:57:02 INFO middleware [148daf8c-9e7e-4042-b896-585a9985c15d] GET /openapi.json → 200 (20.24ms)
+2026-06-01 14:57:09 INFO middleware [9f22fa96-ebcc-4437-9c45-5cc018c1ea55] GET /health → 200 (2.45ms)
+2026-06-01 15:04:45 INFO middleware [a127ffd9-94be-47db-8f54-3b72d374b983] GET /metrics → 200 (63.08ms)
+2026-06-01 15:12:08 INFO middleware [3533bfad-7522-499f-a0b3-b2e6dbf86110] POST /users → 201 (351.24ms)
+2026-06-01 15:33:45 ERROR exceptions HTTPException 401 on http://127.0.0.1:8000/tasks: Invalid API key
+2026-06-01 15:33:45 INFO middleware [19d250e2-76bc-4d41-8e48-7568f77529e9] POST /tasks → 401 (3.77ms)
+2026-06-01 15:35:42 INFO middleware [1bdc05a4-e072-485a-a788-9f4283af2681] POST /users/login → 200 (197.39ms)
+2026-06-01 15:36:57 ERROR exceptions HTTPException 401 on http://127.0.0.1:8000/tasks: Invalid API key
+2026-06-01 15:36:57 INFO middleware [d04d26f0-152f-4da4-b0ed-61a0402bb8b2] POST /tasks → 401 (3.54ms)
+2026-06-01 15:38:36 INFO middleware [a40390ec-f409-40c4-8075-64b19ac0a197] POST /tasks → 201 (152.9ms)
+2026-06-01 15:38:36 INFO background_tasks Sending email to Vaishnavi8@example.com about task: 'TEST'
+2026-06-01 15:38:37 INFO background_tasks Email sent successfully to Vaishnavi8@example.com
+2026-06-01 15:39:26 INFO middleware [2fe3ee7a-22ac-4fdc-81d0-8ee5f756429f] GET /tasks → 200 (5.44ms)
+2026-06-01 15:41:30 INFO middleware [3a4aca99-1ba3-4efc-b8e6-5f5d1e4faee6] GET /tasks/3/stream → 200 (4.73ms)
+2026-06-01 15:47:49 INFO middleware [7a3e9eca-e94f-4b2a-a5bd-fd46943091d3] GET /docs → 200 (0.3ms)
+2026-06-01 15:47:49 INFO middleware [b53c0f9b-05a0-41e9-9bd1-554f92d0750e] GET /openapi.json → 200 (0.96ms)
+2026-06-01 15:47:49 INFO middleware [c1581b1d-c7a4-4286-ac3a-09520b86326f] GET /docs → 200 (0.27ms)
+2026-06-01 15:47:49 INFO middleware [891dab99-1de2-4e25-9484-02181ca581eb] GET /openapi.json → 200 (1.26ms)
+2026-06-01 15:47:50 INFO middleware [535584a7-9339-46d4-b59c-db3485df716f] GET /docs → 200 (1.09ms)
+2026-06-01 15:47:50 INFO middleware [811f4f01-5731-4140-90e9-836766d07f44] GET /openapi.json → 200 (0.91ms)
+2026-06-01 15:47:50 INFO middleware [2c60d95e-0a95-49f6-89c8-93d038316f15] GET /docs → 200 (0.34ms)
+2026-06-01 15:47:50 INFO middleware [d77883b7-9058-4ffd-8b24-43340c817797] GET /openapi.json → 200 (0.98ms)
