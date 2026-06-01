@@ -16,7 +16,9 @@ from app.middleware.logging_middleware import log_requests
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="Smart Task API",
+    title="Smart Task API",@app.get("/")
+def root():
+    return {"message": "Welcome to Smart Task API 🚀"}
     description="A production-ready Task Management API",
     version="1.0.0"
 )
@@ -39,7 +41,7 @@ app.include_router(task_router)
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to Smart Task API 🚀"}
+    return {"message": "Welcome to Smart Task API "}
 
 @app.get("/health")
 def health():
