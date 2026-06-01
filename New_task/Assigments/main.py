@@ -43,6 +43,4 @@ app.include_router(task_router)
 def root():
     return {"message": "Welcome to Smart Task API "}
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+
