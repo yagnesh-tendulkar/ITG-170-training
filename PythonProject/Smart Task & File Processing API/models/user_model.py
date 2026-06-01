@@ -12,12 +12,9 @@ class User(Base):
 
     __tablename__ = "users"
 
-    id = Column(
-        BigInteger,
-        primary_key=True,
-        autoincrement=True
-    )
+    from sqlalchemy import BigInteger
 
+    id = Column(BigInteger, primary_key=True, index=True)
     username = Column(
         String(50),
         unique=True,

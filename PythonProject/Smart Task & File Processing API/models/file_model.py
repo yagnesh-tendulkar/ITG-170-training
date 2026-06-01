@@ -12,7 +12,7 @@ class UploadedFile(Base):
     __tablename__ = "uploaded_files"
 
     id = Column(
-        Integer,
+        BigInteger,
         primary_key=True
     )
 
@@ -24,8 +24,4 @@ class UploadedFile(Base):
         String(500)
     )
 
-    user_id = Column(
-        BigInteger,
-        ForeignKey("users.id"),
-        nullable=False
-    )
+    user_id = Column(BigInteger, ForeignKey("users.id"), nullable=False)

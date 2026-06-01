@@ -1,4 +1,4 @@
-from sqlalchemy import Column
+from sqlalchemy import Column, BigInteger
 from sqlalchemy import Integer,Boolean
 from sqlalchemy import String
 from sqlalchemy import ForeignKey
@@ -26,6 +26,7 @@ class Task(Base):
         nullable=False
     )
 
+
     description = Column(
         String(1000),
         nullable=True
@@ -36,12 +37,7 @@ class Task(Base):
         default="PENDING"
     )
 
-    user_id = Column(
-        Integer,
-        ForeignKey("users.id"),
-        nullable=False
-    )
-
+    user_id = Column(BigInteger, ForeignKey("users.id"), nullable=False)
     created_at = Column(
         DateTime,
         default=datetime.utcnow
