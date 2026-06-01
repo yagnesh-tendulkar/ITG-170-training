@@ -1,0 +1,16 @@
+# IDE files
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+
+# Logs
+*.log
+
