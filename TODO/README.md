@@ -7,28 +7,15 @@ A production-ready TODO application built with FastAPI and SQLAlchemy.
 This is a comprehensive TODO management application that demonstrates modern Python web development practices, including RESTful API design, database management, and dependency injection patterns.
 
 ## Project Structure
-TODO/ ├── app/ │ ├── database/ │ │ └── connection.py # Database configuration and session management │ ├── models/ # SQLAlchemy ORM models │ ├── routes/ # API endpoint definitions │ ├── schemas/ # Pydantic data models for validation │ └── main.py # FastAPI application entry point ├── requirements.txt # Project dependencies └── README.md # Project documentation
-
-## Features
-
-- **FastAPI Framework**: Modern, fast, and easy-to-use web framework for building APIs
-- **SQLAlchemy ORM**: Database abstraction layer supporting multiple database engines
-- **Database Support**: 
-  - SQLite (default for development)
-  - PostgreSQL, MySQL, and other SQL databases (production-ready)
-- **Dependency Injection**: Context-aware database session management
-- **RESTful API**: Clean and intuitive API endpoints for TODO management
-- **Data Validation**: Pydantic schemas for request/response validation
-
-## Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yagnesh-tendulkar/ITG-170-training.git
-   cd ITG-170-training/TODO
-
-   Code
-
+TODO/ ├── app/ 
+├── database/ │
+  └── connection.py # Database configuration and session management 
+├── models/ # SQLAlchemy ORM models 
+├── routes/ # API endpoint definitions
+├── schemas/ # Pydantic data models for validation
+└── main.py # FastAPI application entry point 
+├── requirements.txt # Project dependencies 
+└── README.md # Project documentation
 
 ## Features
 
