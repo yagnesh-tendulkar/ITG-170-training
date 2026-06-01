@@ -16,7 +16,7 @@ from app.schemas.auth_schema import (
 from app.schemas.user_schema import UserResponse
 
 # JWT Configuration
-SECRET_KEY = "your-secret-key-change-in-production"
+SECRET_KEY = "8f3c1b9d6a7e4f2c9b1a6d7e8f3c1b9d6a7e4f2c9b1a6d7e8f3c1b9d6a7e4f2c"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
