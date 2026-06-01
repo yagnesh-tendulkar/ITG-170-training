@@ -488,3 +488,53 @@ TypeError: can't compare offset-naive and offset-aware datetimes
 2026-05-31 19:34:00,765 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [3/5]: Executing heavy vector calculations and embedding text fields...
 2026-05-31 19:34:02,266 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [4/5]: Cleaning transient system memory structures...
 2026-05-31 19:34:03,767 - INFO - [Request-ID: c5acc3db8db4cfba02a00f14de7c60b9] - Stream Progress Stage [5/5]: Task sync completed successfully!
+2026-05-31 19:36:18,159 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Incoming: GET /tasks/2/stream
+2026-05-31 19:36:18,160 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Streaming job sequence initialized for task 2
+2026-05-31 19:36:18,160 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Outgoing: GET /tasks/2/stream | Status: 200 | Duration: 1.0ms
+2026-05-31 19:36:19,659 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Stream Progress Stage [1/5]: Initializing worker environment...
+2026-05-31 19:36:21,160 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Stream Progress Stage [2/5]: Fetching data payloads from storage cache...
+2026-05-31 19:36:22,659 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Stream Progress Stage [3/5]: Executing heavy vector calculations and embedding text fields...
+2026-05-31 19:36:24,160 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Stream Progress Stage [4/5]: Cleaning transient system memory structures...
+2026-05-31 19:36:25,659 - INFO - [Request-ID: 7ad2284b8e5023d8b5d3294ed3391e3a] - Stream Progress Stage [5/5]: Task sync completed successfully!
+2026-05-31 19:39:29,131 - INFO - [Request-ID: fb50ace30369b8a28702eada796086a8] - Incoming: POST /tasks/
+2026-05-31 19:39:29,133 - INFO - [Request-ID: fb50ace30369b8a28702eada796086a8] - Outgoing: POST /tasks/ | Status: 422 | Duration: 2.09ms
+2026-05-31 19:40:12,604 - INFO - [Request-ID: c87a6790361c390d51be6107e7a95832] - Incoming: POST /tasks/
+2026-05-31 19:40:12,605 - INFO - [Request-ID: c87a6790361c390d51be6107e7a95832] - Outgoing: POST /tasks/ | Status: 422 | Duration: 1.81ms
+2026-05-31 19:40:28,914 - INFO - [Request-ID: 0b7b59173d91439b764251d56a722a48] - Incoming: POST /tasks/
+2026-05-31 19:40:28,915 - INFO - [Request-ID: 0b7b59173d91439b764251d56a722a48] - Outgoing: POST /tasks/ | Status: 422 | Duration: 1.59ms
+2026-05-31 19:41:10,474 - INFO - [Request-ID: e42b0d47ba32ce03459369cec4fbcc33] - Incoming: POST /tasks/
+2026-05-31 19:41:10,488 - INFO - [Request-ID: e42b0d47ba32ce03459369cec4fbcc33] - Outgoing: POST /tasks/ | Status: 201 | Duration: 14.17ms
+2026-05-31 19:41:43,723 - INFO - [Request-ID: ac3e2d5d335d7aded11d1896df6f736f] - Incoming: GET /tasks/
+2026-05-31 19:41:43,728 - INFO - [Request-ID: ac3e2d5d335d7aded11d1896df6f736f] - Outgoing: GET /tasks/ | Status: 422 | Duration: 4.7ms
+2026-05-31 19:42:02,146 - INFO - [Request-ID: 82c02fbb7b35304a35cdc6cc60cb16d4] - Incoming: GET /tasks/
+2026-05-31 19:42:02,150 - INFO - [Request-ID: 82c02fbb7b35304a35cdc6cc60cb16d4] - Outgoing: GET /tasks/ | Status: 200 | Duration: 4.0ms
+2026-05-31 19:42:18,505 - INFO - [Request-ID: aff362d67912c2bfe021e35d916ffc9b] - Incoming: GET /tasks/9
+2026-05-31 19:42:18,507 - INFO - [Request-ID: aff362d67912c2bfe021e35d916ffc9b] - Outgoing: GET /tasks/9 | Status: 200 | Duration: 2.81ms
+2026-05-31 19:42:46,424 - INFO - [Request-ID: afda3c99c12f0dda6ba8187399a26819] - Incoming: PATCH /tasks/9
+2026-05-31 19:42:46,444 - INFO - [Request-ID: afda3c99c12f0dda6ba8187399a26819] - Outgoing: PATCH /tasks/9 | Status: 200 | Duration: 19.67ms
+2026-05-31 19:43:12,204 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Incoming: GET /tasks/9/stream
+2026-05-31 19:43:12,205 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Streaming job sequence initialized for task 9
+2026-05-31 19:43:12,205 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Outgoing: GET /tasks/9/stream | Status: 200 | Duration: 1.04ms
+2026-05-31 19:43:13,704 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Stream Progress Stage [1/5]: Initializing worker environment...
+2026-05-31 19:43:15,204 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Stream Progress Stage [2/5]: Fetching data payloads from storage cache...
+2026-05-31 19:43:16,704 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Stream Progress Stage [3/5]: Executing heavy vector calculations and embedding text fields...
+2026-05-31 19:43:18,205 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Stream Progress Stage [4/5]: Cleaning transient system memory structures...
+2026-05-31 19:43:19,706 - INFO - [Request-ID: abb8336c5ca73edd348ef7f9901df15e] - Stream Progress Stage [5/5]: Task sync completed successfully!
+2026-05-31 19:44:22,491 - INFO - [Request-ID: 10e55a4ca01fccf2d64c4a033dd6d6b2] - Incoming: DELETE /tasks/9
+2026-05-31 19:44:22,506 - INFO - [Request-ID: 10e55a4ca01fccf2d64c4a033dd6d6b2] - Outgoing: DELETE /tasks/9 | Status: 204 | Duration: 14.82ms
+2026-05-31 19:44:54,406 - INFO - [Request-ID: 5789b2aa60deeb291464e4ab7e436e7a] - Incoming: GET /tasks/9
+2026-05-31 19:44:54,409 - INFO - [Request-ID: 5789b2aa60deeb291464e4ab7e436e7a] - Outgoing: GET /tasks/9 | Status: 404 | Duration: 2.76ms
+2026-05-31 19:45:03,345 - INFO - [Request-ID: 0427a77b502189f61e7a1257c0d82391] - Incoming: GET /tasks/8
+2026-05-31 19:45:03,347 - INFO - [Request-ID: 0427a77b502189f61e7a1257c0d82391] - Outgoing: GET /tasks/8 | Status: 200 | Duration: 2.72ms
+2026-05-31 19:45:10,834 - INFO - [Request-ID: fa651dd7a195956db3f614fbcb3727a8] - Incoming: DELETE /tasks/8
+2026-05-31 19:45:10,843 - INFO - [Request-ID: fa651dd7a195956db3f614fbcb3727a8] - Outgoing: DELETE /tasks/8 | Status: 204 | Duration: 9.24ms
+2026-06-01 10:57:43,825 - INFO - [Request-ID: 0d437642d37e7e48697893c12ed72cae] - Incoming: GET /
+2026-06-01 10:57:43,825 - INFO - [Request-ID: 0d437642d37e7e48697893c12ed72cae] - Outgoing: GET / | Status: 404 | Duration: 0.85ms
+2026-06-01 10:57:49,338 - INFO - [Request-ID: 7e47ba9d4d7f4e326165021380963bab] - Incoming: GET /docs
+2026-06-01 10:57:49,339 - INFO - [Request-ID: 7e47ba9d4d7f4e326165021380963bab] - Outgoing: GET /docs | Status: 200 | Duration: 0.61ms
+2026-06-01 10:57:49,870 - INFO - [Request-ID: 78de763aa07494917977f46b7060cf24] - Incoming: GET /openapi.json
+2026-06-01 10:57:49,880 - INFO - [Request-ID: 78de763aa07494917977f46b7060cf24] - Outgoing: GET /openapi.json | Status: 200 | Duration: 10.15ms
+2026-06-01 10:57:56,466 - INFO - [Request-ID: 3eb67de7c0eac1a21f9bed9436dfb0d9] - Incoming: GET /health
+2026-06-01 10:57:56,468 - INFO - [Request-ID: 3eb67de7c0eac1a21f9bed9436dfb0d9] - Outgoing: GET /health | Status: 200 | Duration: 1.46ms
+2026-06-01 10:59:07,600 - INFO - [Request-ID: 5ea165bc1e68be0f30836337ccf4ab7a] - Incoming: GET /tasks/
+2026-06-01 10:59:07,610 - INFO - [Request-ID: 5ea165bc1e68be0f30836337ccf4ab7a] - Outgoing: GET /tasks/ | Status: 200 | Duration: 9.95ms
