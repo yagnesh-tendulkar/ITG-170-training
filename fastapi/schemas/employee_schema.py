@@ -1,32 +1,44 @@
-from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
 from typing import Optional
 
+from pydantic import BaseModel, EmailStr, Field, field_validator
+
 
 class EmployeeCreate(BaseModel):
-
-    name: str = Field(min_length=3, max_length=50)
-    email: str
-    position: str
-    salary: float
+    name: str = Field(..., min_length=3, max_length=50)
+    email: EmailStr
+    position: str = Field(..., min_length=2, max_length=50)
+    salary: float = Field(..., gt=0)
     hired_at: datetime
 
-    @field_validator("salary")
-    def validate_salary(cls, value):
-        if value <= 0:
-            raise ValueError("Salary must be positive")
+    @field_validator("position")
+    def validate_position(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("Position must not be empty")
+        return value.strip()
+
+    @field_validator("hired_at")
+    def validate_hired_at(cls, value: datetime) -> datetime:
+        if value > datetime.utcnow():
+            raise ValueError("Hired date cannot be in the future")
         return value
 
 
 class EmployeeUpdate(BaseModel):
     name: Optional[str] = Field(None, min_length=3, max_length=50)
-    email: Optional[str] = None
-    position: Optional[str] = None
-    salary: Optional[float] = None
+    email: Optional[EmailStr] = None
+    position: Optional[str] = Field(None, min_length=2, max_length=50)
+    salary: Optional[float] = Field(None, gt=0)
     hired_at: Optional[datetime] = None
 
-    @field_validator("salary")
-    def validate_salary(cls, value):
-        if value is not None and value <= 0:
-            raise ValueError("Salary must be positive")
+    @field_validator("position")
+    def validate_position(cls, value: Optional[str]) -> Optional[str]:
+        if value is not None and not value.strip():
+            raise ValueError("Position must not be empty")
+        return value.strip() if value is not None else value
+
+    @field_validator("hired_at")
+    def validate_hired_at(cls, value: Optional[datetime]) -> Optional[datetime]:
+        if value is not None and value > datetime.utcnow():
+            raise ValueError("Hired date cannot be in the future")
         return value
