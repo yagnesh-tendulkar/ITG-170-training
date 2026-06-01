@@ -1,0 +1,10 @@
+name= input('enter your name: ')
+city= input('Enter your city: ')
+date= input('Enter today\'s date in(DD-MM-YYYY): ')
+fav= input('Enter your favourite thing: ')
+
+print('Your details are: ')
+print('Name:',name)
+print('City:',city)
+print('Date:',date)
+print('Favourite thing:',fav)
