@@ -5,6 +5,6 @@ class UserService:
         return [
             {
                 "id": 1,
-                "username": "Arika"
+                "username": "vaishnavi"
             }
         ]
