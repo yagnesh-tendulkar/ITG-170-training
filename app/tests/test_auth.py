@@ -9,8 +9,8 @@ def test_register():
     response = client.post(
         "/auth/register",
         json={
-            "username": "Arika",
-            "email": "arika@gmail.com",
+            "username": "vaishnavi",
+            "email": "vaishnavi@gmail.com",
             "password": "123456"
         }
     )
