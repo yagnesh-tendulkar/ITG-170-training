@@ -1,7 +1,13 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from pydantic import BaseModel, EmailStr, Field, field_validator
+
+
+def _to_utc(value: datetime) -> datetime:
+    if value.tzinfo is None or value.tzinfo.utcoffset(value) is None:
+        return value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc)
 
 
 class EmployeeCreate(BaseModel):
@@ -19,7 +25,7 @@ class EmployeeCreate(BaseModel):
 
     @field_validator("hired_at")
     def validate_hired_at(cls, value: datetime) -> datetime:
-        if value > datetime.utcnow():
+        if _to_utc(value) > datetime.now(timezone.utc):
             raise ValueError("Hired date cannot be in the future")
         return value
 
@@ -39,6 +45,6 @@ class EmployeeUpdate(BaseModel):
 
     @field_validator("hired_at")
     def validate_hired_at(cls, value: Optional[datetime]) -> Optional[datetime]:
-        if value is not None and value > datetime.utcnow():
+        if value is not None and _to_utc(value) > datetime.now(timezone.utc):
             raise ValueError("Hired date cannot be in the future")
         return value

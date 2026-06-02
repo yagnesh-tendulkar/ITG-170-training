@@ -1,10 +1,11 @@
 import hashlib
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 import mysql.connector
 
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
@@ -58,11 +59,23 @@ def _ensure_default_hr_user() -> None:
     if not HR_USERNAME or not HR_PASSWORD:
         return
 
-    mycursor.execute("SELECT id FROM hr_users WHERE username=%s", (HR_USERNAME,))
-    if mycursor.fetchone() is None:
+    mycursor.execute(
+        "SELECT id, password_hash, role FROM hr_users WHERE username=%s",
+        (HR_USERNAME,),
+    )
+    user = mycursor.fetchone()
+    hashed_password = _hash_password(HR_PASSWORD)
+
+    if user is None:
         mycursor.execute(
             "INSERT INTO hr_users (username, password_hash, role) VALUES (%s, %s, %s)",
-            (HR_USERNAME, _hash_password(HR_PASSWORD), HR_ROLE),
+            (HR_USERNAME, hashed_password, HR_ROLE),
+        )
+        mydb.commit()
+    elif user["password_hash"] != hashed_password or user["role"] != HR_ROLE:
+        mycursor.execute(
+            "UPDATE hr_users SET password_hash=%s, role=%s WHERE id=%s",
+            (hashed_password, HR_ROLE, user["id"]),
         )
         mydb.commit()
 

@@ -63,6 +63,11 @@ http://127.0.0.1:8000
 Use the `/login` endpoint after setting the HR credentials in `.env`.
 If `HR_USERNAME` and `HR_PASSWORD` are supplied, the app will seed that user automatically when the database is initialized.
 
+The default HR credentials are:
+
+- `username=hr`
+- `password=1234`
+
 Request example:
 
 ```bash

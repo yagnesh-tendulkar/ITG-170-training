@@ -1,11 +1,12 @@
 import datetime
 import os
+from pathlib import Path
 
 import jwt
 from dotenv import load_dotenv
 from fastapi import HTTPException
 
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 SECRET = os.getenv("JWT_SECRET")
 if not SECRET:
