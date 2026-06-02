@@ -1,3 +1,4 @@
 uploads
 .details.txt
 .env
+.env.example
