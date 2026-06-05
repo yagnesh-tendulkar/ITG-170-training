@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF=8">
+    <meta name="Practice" content="Practice on html">
+    <meta author="Balaji" content="Software trainee">
+    <meta name="description" content="content">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Welcome to ba;lajis workspace</title>
+    <!-- internal cSS -->
+    <style>
+      body{background-color:white;}
+      h1{border:2px solid Red;}
+      p{font-family:"calibri";}
+      tr:nth-child(even){
+        background-color:#D6EEEE;
+      }
+      div{
+        width:auto;
+        display:inline-block;
+        
+      }
+    </style>  
+     <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    </head>
+
+   
+  <body>
+    <h1>WELCOME</h1>
+    <h2>DOCTYPE declaration tells the browser that this document is a HTML5 document.</h2>
+    <p>In html headings are defined with 6 types h1to h6</p>
+    <br>
+    <p> anchor tag is used to define links,links destination is specified in href attribute.</p>
+    <a href="www.google.com/">Welcome</a>
+    <!-- inline CSS -->
+    <p style="color:red">In html images are defined using image tag,src= attribute where it ontains url for te image or the image path or name of the file in local.there is an another attribute called alt text,where it is used to explain the image if is not loaded</p>
+    <img src="data:image/png;base64,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" alt="Learn Fast <img" width="100" height="100"/>
+    <br>
+    <p title="displayed text when hoved">Welcome to title attribute used when mouse hoverd the element</p>
+    <p title="headings">New chapter</p>
+    <h1>welcome to HTML headings,h1 is used for page titles</h1>
+    <h2>h1 to h6 are types of hedings,h2 is used for section titles</h2>
+    <h3 style="font-style:arial">h3 is used for sub section titles</h3>
+
+    <h4 color="black" style="font-size:90px">h4 is another type of heading</h4>
+    <h5 color="blue">h5 ,i dont know about that i need to do research</h5>
+    <h6 color="red"> least important heading have gien priority with this heading</h6>
+<p>this is a tag that is used to break a paragraph <hr>hr stands for horizontal rules draws a horizonta line between the lines</p>
+<p>hr is horizontal rules tag when we want to seperate the content we use this tag ,it just draws a horizontal line<hr>it is an empty tag ,as it doesnot contain closing tag</p>
+<h2>pre tag</h2>
+<p>this tag is used to display the text as it is written by user.</p>
+<pre> This 
+  is balaji
+  rom Aditya university.
+  currelty working as a soft
+  ware trainee
+  at 
+  Miracle soft.sys
+  .
+  .</pre>
+
+  <p style="font-size:200px">hello</p>
+    <h1 style="background-color:powderblue;">This paragraph is in blue background</h1>
+    <p style="background-color:red;color:white;font-family:courier;text-align:right">hello everyone welcome to MSS</p>
+    
+    <h4 style="background-color:green;font-family:verdana;font-size:15px;color:white;text-align:center;">my songs ...========.-.-.-.-.-</h4>
+    
+    <h3>formatting elements</h3>
+    <p>in html formatting elements are used to format the text,here there are various tags doing this task,they are <b>represents bold text</b>
+    
+    <br><strong>this tag /element represents some thing that is important,text is displayed as bold similar to bold tag</strong>
+    <strong> this tag explains the text with importance</strong>
+    <p>this is <i>italic tag that display content in italic format</i></p>
+
+<h3>this is <small>small</small> tag</h3>
+
+<h4><mark>welcome to MSSSSS/....</mark></h4>
+<p>My favorite color is <del>blue</del> red.</p>
+
+H<sub>2</sub>O
+
+A<sup>2</sup>
+
+
+<p style="background-color:red">HTML <q title="used to display short quotations">Quotations</q>,<blockquote>this is used ,when we want to display the quotationthat is taken from another reference,we use cite for storing the referemce website</blockquote></p>
+
+<h1><abbr title="Abbrevation full form hovered">WHO</abbr>displayed</h1>
+
+<address>
+Written by John Doe.<br> 
+Visit us at:<br>
+Example.com<br>
+Box 564, Disneyland<br>
+USA
+</address>
+
+<a href="https://www.google.com/" alt="Google.com" target="_blank">GOOGLE</a>
+<a href="mailto:pasambalaji988@gmai.com">Send email</a>
+
+
+
+
+
+
+
+<div style="display:left;justify-content:flex-start;width:50px;">
+  <h1>ABHI</h1>
+</div>
+<div style="flex:center;width:50px;">
+  <h1>ABHI</h1>
+</div>
+<div style="flex:right;width:50px;">
+  <h1>ABHI</h1>
+</div>
+
+
+
+
+
+
+<!-- Left Aligned -->
+<div style="display: flex; justify-content: flex-start;">
+  <h1>ABHI</h1>
+</div>
+
+<!-- Center Aligned -->
+<div style="display: flex; justify-content: center;">
+  <h1>ABHI</h1>
+</div>
+
+<!-- Right Aligned -->
+<div style="display: flex; justify-content: flex-end;">
+  <h1>ABHI</h1>
+</div>
+
+
+
+
+
+<h6>hi hello namsthe</h6>
+<!--
+<table width=100%>
+  <caption>Sample table</caption>
+  <tr >
+    <th colspan="2">Company</th>
+    <th rowspan="2">Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr><style>
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1 id="myHeader">My Header</h1>
+
+    <td>MSS</td>
+    <td>9888867677</td>
+    <td>INDIA</td>
+  </tr>
+  <tr>
+    <td>AUS</td>
+    <td>984563210</td>
+    <td>INDIA</td>
+  </tr
+</table><h6>hi hello namsthe</h6>
+-->
+
+
+<ul type="square">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+<ul type="circle">
+  <li>balaji</li>
+  <li>MSS</li>
+</ul>
+
+<ol type="a">
+  <li>balaji</li>
+  <li>MSS</li>
+</ol>
+
+<dl>
+  <dt>cofee</dl>
+    <dd>hot coffee milk</dd>
+  <dt>milk</dt>
+    <dd>milk is milky</dd>
+</dl>
+
+
+<div style="background-color:yellow;">
+  <h2>London</h2>
+  <p >London is the capital city of England.</p>
+  <p>London has over 9 million inhabitants.</p>
+</div>
+
+<div style="background-color:pink;">
+  <h2>Oslo</h2>
+  <p>Oslo is the capital city of Norway.</p>
+  <p>Oslo has over 700,000 inhabitants.</p>
+</div>
+
+<div style="background-color:red;">
+  <h2>Rome</h2>
+  <p>Rome is the capital city of Italy.</p>
+  <p>Rome has over 4 million inhabitants.</p>
+</div>
+
+<div>
+  <!DOCTYPE html>
+<html>
+<head>
+<style>
+.city {
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  margin: 2px;
+  padding: 26px;
+  border-spacing:20px;
+}
+</style>sample
+</head>
+<body>
+
+<div class="city">
+<h2>London</h2>
+<p>London is the capital of England.</p>
+</div> 
+
+<div class="city">
+<h2>Paris</h2>
+<p>Paris is the capital of France.</p>
+</div>
+
+<div class="city">
+<h2>Tokyo</h2>sample
+<p>Tokyo is the capital of Japan.</p>
+</div>
+
+</body>
+</html>
+</div>
+
+
+<div class="city">
+  <p>hello everyone</p>
+</div>
+
+
+<style>
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 0px;
+  text-align: center;
+}
+</style>
+
+<h1 id="myHeader">My Header</h1>
+
+
+
+
+<button type="button">Click here</button>
+<button type="button">Normal Button</button>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+
+<br>
+
+<iframe src="https://www.google.com/" style="border:none;"height="200" width="300" title="Iframe Example"></iframe>
+
+
+
+<h2>iframe</h2>
+<p>iframe is used to display a webpage inside another webpage</p>
+<iframe src="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_target" title="git repo" height="300"width="300" name="balaji_iframe"style="border:none;"></iframe>
+<p>sending another iframe to targetedone,here when we want to send a iframe to a particular target,we must mention the name of iframe in target location of anchor tag</p>
+<a href="https://www.youtube.com/" target="balaji_iframe" >NEW FRAME</a> 
