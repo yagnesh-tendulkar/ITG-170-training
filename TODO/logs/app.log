@@ -538,3 +538,9 @@ TypeError: can't compare offset-naive and offset-aware datetimes
 2026-06-01 10:57:56,468 - INFO - [Request-ID: 3eb67de7c0eac1a21f9bed9436dfb0d9] - Outgoing: GET /health | Status: 200 | Duration: 1.46ms
 2026-06-01 10:59:07,600 - INFO - [Request-ID: 5ea165bc1e68be0f30836337ccf4ab7a] - Incoming: GET /tasks/
 2026-06-01 10:59:07,610 - INFO - [Request-ID: 5ea165bc1e68be0f30836337ccf4ab7a] - Outgoing: GET /tasks/ | Status: 200 | Duration: 9.95ms
+2026-06-01 11:31:34,608 - INFO - [Request-ID: 21b14383f724c24de7e1fed6a16cfc4b] - Incoming: GET /health
+2026-06-01 11:31:34,609 - INFO - [Request-ID: 21b14383f724c24de7e1fed6a16cfc4b] - Outgoing: GET /health | Status: 200 | Duration: 1.07ms
+2026-06-01 11:31:39,657 - INFO - [Request-ID: b81289ecbebee6aaa399d3709176dfa5] - Incoming: GET /health
+2026-06-01 11:31:39,658 - INFO - [Request-ID: b81289ecbebee6aaa399d3709176dfa5] - Outgoing: GET /health | Status: 200 | Duration: 1.1ms
+2026-06-01 11:37:12,542 - INFO - [Request-ID: 48eb315c17b2b6c0ae99599f8a262d54] - Incoming: GET /tasks/1
+2026-06-01 11:37:12,546 - INFO - [Request-ID: 48eb315c17b2b6c0ae99599f8a262d54] - Outgoing: GET /tasks/1 | Status: 200 | Duration: 3.93ms
