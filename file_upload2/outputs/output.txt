@@ -1,0 +1,93 @@
+Program Flow and Access Modifier
+1. Program to take the number at runtime and check whether the given number
+is positive or negative.
+2. Check whether the student passed or failed and if he passed print which rank
+obtained.
+3. Check the given character uppercase or lower case or digit or special
+character?
+4. Print which number is biggest among two numbers.
+5. Print square of each number up to 20.
+6. Print “n” Even numbers.
+7. Print sum of all even numbers b/w 1 to n.
+8. Program to print the prime numbers from 1 to 10.
+9. Print square of each number up to 20.
+10. Print factorial of n.
+11. Given number is perfect number or not.
+12. Print the Fibonacci series up to n.
+13. Find big digit in a number.
+14. Program to Find Sum of Digits of a Number using Recursion.
+15. Program to print the sum of alternative digits in a given number?
+16. Program to print the no of occurrences of a digit in a number.
+17. Program to whether all digits in a given number are equal or not?
+18. Program to add the first and last digit of a given number?
+19. Program to add even and odd digits of a given number?
+20. Program to reverse a number?
+21. Program to print prime numbers between m to n.
+22. Program to print n prime numbers.
+23. Program to print perfect numbers between m to n.
+24. Program to print n perfect numbers.
+25. Program to Print Armstrong Number between 1 to 1000.
+26. Program to Find Sum of Natural Numbers.
+© 2025 M iracle Software Systems, Inc. | 1 www.miraclesoft.com
+27. Program to copy all elements of one array into another array.
+28. Program to find the frequency of each element in the array.
+29. Program to print the duplicate elements of an array.
+30. Program to print the elements of an array in reverse order without sorting.
+31. Program to find Largest Number and smallest in an Array.
+32. Program to sort the elements of an array in descending order.
+33. Program to print the sum of all the items of the array.
+34. Program to print Odd and Even Numbers from an Array.
+35. Program to check whether a given number is a happy number or not?
+36. Program to Find the Sum of the Series 1/1+1/2+1/3+…1/N.
+37. Program to Find the Sum of the Series 1/1+1/2^2+1/3^2+1/4^2+1/5^2.
+38. Program to Find the Sum of the Series 1/1^0+1/2^1+1/3^2+1/4^3+1/5^4.
+39. Program to Find the Sum of the Series 1/2^0+1/2^1+1/2^2+1/2^3+1/2^4.
+40. Program to Find the Sum of the Series 1/1!+1/2!+1/3!+…1/N!
+41. Program to Find the Sum of the Series 1/1+1/4+1/9+…1/N^2
+42. Program to Find the Sum of the Series 1/1!+1/2!+1/3!+…1/N!
+43. Write a program to display pattern
+* * * *****
+* * **
+*** ****
+* * *
+***
+* * * * ***** ***
+* * * * * ****
+******* **
+*****
+********* *
+******
+*******
+*****
+***
+*
+© 2025 M iracle Software Systems, Inc. | 2 www.miraclesoft.com
+1 1 5 1
+1 2 2 3 5 4 2 1
+1 2 3 4 5 6 5 4 3 3 2 1
+1 2 3 4 7 8 9 10 5 4 3 2 4 3 2 1
+1 2 3 4 5 11 12 13 14 15 5 4 3 2 1 5 4 3 2 1
+1 1 1 2 3 4 1
+2 3 4 1*2
+10 212
+3 4 1*2*3
+101 32123 4 1*2*3*4
+3 4 1*2*3*4*5
+1010 4321234
+2 3 4
+1*2*3*4*5*6
+10101 1 2 3 4
+1*2*3*4*5*6*7
+A A B C D E F G 1 ******1
+A B A B C D E F *2* *****12
+A B C A B C D E **3** ****123
+A B C D A B C D ***4*** ***1234
+A B C D E A B C ****5**** **12345
+A B C D E F A B *****6***** *123456
+A ******7****** 1234567
+44. How Python Access Modifiers is Useful for Programming in Python?
+ Public
+ Private
+ Protected
+45. create a different package with multiple classes.
+© 2025 M iracle Software Systems, Inc. | 3 www.miraclesoft.com
