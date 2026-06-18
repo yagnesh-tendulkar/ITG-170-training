@@ -1,0 +1,54 @@
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}
+
+p{
+  /*background-color:white;
+ */
+}
+ 
+h1{
+   padding:12px;
+   /*padding is space between the text and border*/
+    word-spacing: 0px;
+   margin:50px;
+   /*margin defines the space outside the border*/
+  
+}
+
+table,th,td{
+  border: 1px solid white;
+  border-collapse: collapse;
+  color:pink;
+  /*border-radius:10px;*/
+  border-style:solid;
+  border-spacing:1px;
+}
+th,td{
+  background-color:blue;
+  text-align:center;
+  border-radius:5px;
+  border-color:#96D4D4;
+
+  /*cell pading -used to define space between the cell text cell edges*/
+  padding:15px;
+  
+
+
+  /*cell spacing- used to define the spce between the cells*/
+  
+}
+th{
+  color:pink;
+  padding-left:2px;
+  padding-right:23px;
+  padding-top:2px;
+  padding-bottom:10px;
+}
+caption{
+  color:black;
+}
+
