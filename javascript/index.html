@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Modern Form</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.form-box{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform: translateY(20px);}
+    to{opacity:1; transform: translateY(0);}
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.input-box{
+    margin-bottom:15px;
+    position: relative;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#00c6ff;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0072ff;
+    transform: scale(1.05);
+}
+
+.error{
+    font-size:12px;
+    color:#ff4d4d;
+    margin-top:5px;
+}
+
+.eye{
+    position:absolute;
+    right:10px;
+    top:12px;
+    cursor:pointer;
+    color:black;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2>✨ Register</h2>
+
+<form id="myForm">
+
+<div class="input-box">
+<input type="text" id="name" placeholder="Enter Name">
+<div id="nameError" class="error"></div>
+</div>
+
+<div class="input-box">
+<input type="email" id="email" placeholder="Enter Email">
+<div id="emailError" class="error"></div>
+</div>
+
+<div class="input-box">
+<input type="password" id="password" placeholder="Enter Password">
+<span class="eye" onclick="togglePassword()">👁️</span>
+<div id="passwordError" class="error"></div>
+</div>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+<script>
+
+// show/hide password
+function togglePassword(){
+    let pass = document.getElementById("password");
+    pass.type = (pass.type === "password") ? "text" : "password";
+}
+
+document.getElementById("myForm").addEventListener("submit", function(event){
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    let valid = true;
+
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("passwordError").innerText = "";
+
+    if(name === ""){
+        document.getElementById("nameError").innerText = "Name is required";
+        valid = false;
+    }
+
+    if(!email.includes("@")){
+        document.getElementById("emailError").innerText = "Invalid email";
+        valid = false;
+    }
+
+    if(password.length < 6){
+        document.getElementById("passwordError").innerText = "Min 6 characters";
+        valid = false;
+    }
+
+    if(!valid){
+        event.preventDefault();
+    } else {
+        alert("🎉 Success!");
+    }
+
+});
+
+</script>
+
+</body>
+</html>
