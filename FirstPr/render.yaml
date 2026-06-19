@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: interview-prep-backend
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "gunicorn -k uvicorn.workers.UvicornWorker backend.main:app --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: DATABASE_URL
+        value: postgres://interview:interviewpass@render-db:5432/interview
+      - key: SECRET_KEY
+        value: replace-me-with-a-secure-value
+      - key: GEMINI_API_KEY
+        value: ""
+      - key: OPENAI_API_KEY
+        value: ""
+      - key: CORS_ORIGINS
+        value: https://your-frontend-url.vercel.app
+  - type: static
+    name: interview-prep-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "dist"
