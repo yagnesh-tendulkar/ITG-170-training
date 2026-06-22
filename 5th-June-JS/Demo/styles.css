@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(223, 223, 223);
+    color:rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif    ;
+    
+}
+
+.section
+{
+    /* border: 1px solid ; */
+width: 48%;;
+    height:60vh;
+
+    
+}
+
+#left img{
+    height: 10vh;
+}
+
+#left h2{
+    margin-top: 10%;
+}
+#left p{
+    margin-top: 5%;
+}
+#left button{
+    margin-top: 10%;
+}
+.hero
+{
+    display: flex;
+    padding-left: 5%;
+    padding-top: 10vh;
+}

@@ -1,0 +1,8 @@
+body {
+    display: flex;
+    flex-direction: column; /* so items stack vertically */
+    justify-content: center; /* vertical centering for column */
+    align-items: center;     /* horizontal centering */
+    height: 100vh;           /* full viewport height */
+    margin: 0;               /* remove default body margin */
+}
