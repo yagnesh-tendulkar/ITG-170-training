@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+# Tell pytest where to find tests
+testpaths = ["tests"]
+
+# Enable async test support (needed for testing async functions)
+asyncio_mode = "auto"
+
+# Show short test summary at the end
+addopts = "-v --tb=short -q"
